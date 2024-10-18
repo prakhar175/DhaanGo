@@ -1,57 +1,44 @@
 <?php
 session_start();
-require "../dbh.inc.php"; // Ensure your database connection is correct
+require "../dbh.inc.php";
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1); // Enable error reporting
-
-// Check if session variables are set
 if (!isset($_SESSION['unique_id'])) {
-    header("Location: ../login.php");
+    header("Location: ../login/login.php");
     exit;
 }
 
-$fname = $_SESSION['fname'];
-$lname = $_SESSION['lname'];
+$unique_id = $_SESSION['unique_id'];
 
 // Prepare SQL query
-$query = "SELECT * FROM users WHERE fname = :fname AND lname = :lname";
+$query = "SELECT * FROM users WHERE unique_id = :unique_id";
 $stmt = $pdo->prepare($query);
-$stmt->bindParam(':fname', $fname);
-$stmt->bindParam(':lname', $lname);
+$stmt->bindParam(":unique_id", $unique_id);
 
 if ($stmt->execute()) {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 } else {
-    // Handle query execution error
     echo "Error executing query.";
     exit;
 }
 
-// Logout functionality
-// if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
-//     session_destroy();
-//     header("Location: ../login.php");
-//     exit;
-// }
-
-// Profile update functionality (basic example)
+// Handle email update
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
-    $email = $_POST['email'];
-    // Here, you would add validation and sanitization for the input.
-
-    $updateQuery = "UPDATE users SET email = :email WHERE fname = :fname AND lname = :lname";
+    $newEmail = $_POST['email'];
+    
+    $updateQuery = "UPDATE users SET email = :email WHERE unique_id = :unique_id";
     $updateStmt = $pdo->prepare($updateQuery);
-    $updateStmt->bindParam(':email', $email);
-    $updateStmt->bindParam(':fname', $fname);
-    $updateStmt->bindParam(':lname', $lname);
+    $updateStmt->bindParam(':email', $newEmail);
+    $updateStmt->bindParam(':unique_id', $unique_id);
 
     if ($updateStmt->execute()) {
-        $successMessage = "Profile updated successfully.";
+        $successMessage = "Email updated successfully.";
+        // Optionally, refresh the user's session email
+        $_SESSION['email_address'] = $newEmail;
     } else {
-        $errorMessage = "Error updating profile.";
+        $errorMessage = "Error updating email.";
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
         <?php endif; ?>
 
         <?php if ($result): ?>
-            <h3 class="text-center">Welcome <?= htmlspecialchars($fname) . " " . htmlspecialchars($lname) ?></h3>
+            <h3 class="text-center">Welcome <?= htmlspecialchars($result['fname']) . " " . htmlspecialchars($result['lname']) ?></h3>
             <div class="text-center">
                 <img src="<?= htmlspecialchars($result['profile_photo']) ?>" alt="Profile Photo" class="profile-photo">
             </div>
