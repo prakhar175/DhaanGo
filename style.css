@@ -1,21 +1,22 @@
 body {
-    margin: 0;
-    padding: 0;
+    background-color: white;
+    color:black;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 nav {
-    position: relative;
+    position:relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:center;
     justify-content: center; 
-    height: 400px; 
+    height: 100px; 
     overflow: hidden;
 }
 
 nav .logo img {
-    width: 120px;
-    height: 100px;
+    width: 100px;
+    height: 80px;
     cursor: pointer;
 }
 
@@ -33,7 +34,8 @@ nav .logo a {
 nav .options {
     display: flex;
     flex-direction: row;
-    margin-top: 0px;
+    margin:auto;
+    align-items: center;
 }
 
 nav .options div {
@@ -45,30 +47,19 @@ nav .options div {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.options a {
+.options a, .options p {
     color: white;
     text-decoration: none;
-}
 
-/* Video background setup */
-#background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
 }
 
 /* Adjust content positions */
 nav .logo,
 nav .options {
     z-index: 1; 
-    margin-bottom: 0;
+    margin:auto;
+    top: 0%;
 }
-
-
 
 .main {
     display: flex;
@@ -81,40 +72,17 @@ nav .options {
 .main .options{
     min-width: 80%
 }
-body {
-    transition: background-color 0.3s, color 0.3s; 
-}
 
 body.dark-mode {
     background-color: #121212;
     color: white; 
 }
 
-body {
-    background-color: white;
-    color: black; 
-}
-body {
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-body.dark-mode {
-    background-color: #121212; 
-    color: white; 
-}
-
-body {
-    background-color: white;
-    color: black;
-}
-
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
-    height: 34px;
+    height: 25px;
 }
 
 .switch input {
@@ -123,7 +91,15 @@ body {
     height: 0;
 }
 
-.slider {
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+  }
+  
+  /* The slider */
+  .slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -131,21 +107,24 @@ body {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px; 
-}
-
-.slider:before {
+    transition: 0.4s;
+    border-radius: 25px;
+  }
+  
+  /* The slider circle */
+  .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 2.5px;
     background-color: white;
-    transition: .4s; 
-    border-radius: 50%
-}
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+
 
 input:checked + .slider {
     background-color: #2196F3;
@@ -155,6 +134,10 @@ input:checked + .slider:before {
     transform: translateX(26px); 
 }
 
+
+
+
+
   
 .floating-dock-container {
     position: fixed; /* Keep the dock fixed on the screen */
@@ -163,6 +146,12 @@ input:checked + .slider:before {
     bottom: 20px; /* Distance from the bottom */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, 0); /* Center it */
+    
+    /* Add a transparent background with depth effect */
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    padding: 10px; /* Optional padding for better spacing */
+    border-radius: 50px; /* Slightly rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
 .floating-dock {
@@ -190,8 +179,6 @@ input:checked + .slider:before {
     font-size: 20px; /* Icon size */
 }
 
-
-
 .floating-dock img {
     width: 50px; /* Set image width */
     height: 50px; /* Set image height */
@@ -203,7 +190,7 @@ input:checked + .slider:before {
     bottom: 60px; /* Position above the icon */
     left: 50%; /* Center it */
     transform: translateX(-50%); /* Center adjustment */
-    background: rgba(0, 0, 0, 0.7); /* Background color */
+    background: rgba(0, 0, 0, 0.8); /* Background color */
     color: #fff; /* Text color */
     padding: 5px 10px; /* Padding for the tooltip */
     border-radius: 5px; /* Rounded corners */
@@ -219,10 +206,10 @@ input:checked + .slider:before {
     transition: opacity 0.3s; /* Smooth transition for visibility */
 }
 
-
-.last{
-    margin-top:10000%
+.last {
+    margin-top: 10000%;
 }
+
 .floating-dock-container img {
     width: 60px;
     margin-left: -8%;
@@ -253,27 +240,28 @@ input:checked + .slider:before {
 .floating-dock li:hover + li + li {
     transform: scale(1.1); /* Scale up the next neighbor after the next */
 }
+
 .floating-dock li a i {
     font-size: 19px; /* Icon size */
-color:rgb(99, 97, 97);
-
+    color: rgb(99, 97, 97);
 }
+
 .floating-dock li .title {
     display: none; /* Hide title by default */
     position: absolute; /* Position above the icon */
     bottom: 54px; /* Adjust position */
     left: 50%; /* Center it */
     transform: translateX(-50%); /* Center adjustment */
-    background: rgba(0, 0, 0, 0.7); /* Background color */
+    background: rgba(0, 0, 0, 0.8); /* Background color */
     color: #fff; /* Text color */
     border-radius: 5px; /* Rounded corners */
     white-space: nowrap; /* Prevent text from wrapping */
     z-index: 10; /* Ensure it appears above other elements */
-    font-size: 12px; /* Font size for title */
+    font-size: 9px; /* Font size for title */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height:40px;
-    padding:10px;
-    margin-top:10%
+    height: auto;
+    margin-top: 5px;
+    padding: 5px 10px; 
 }
 
 /* Show title on hover */
