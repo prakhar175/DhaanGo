@@ -1,5 +1,0 @@
-!pip install torch
-!pip install transformers
-!pip install langchain
-!pip install langchain-groq
-!pip install groq
