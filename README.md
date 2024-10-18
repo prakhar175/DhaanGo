@@ -8,7 +8,7 @@ DhaanGo is a comprehensive web application designed to empower farmers by addres
 
 1. **🌐 Dual Marketplace**
    - Connects farmers directly with businesses 🏪
-   - Facilitates buying and selling of agricultural products 💰
+   - Facilitates buying and selling of agricultural products💰
 
 2. **🤖 MittiMitra: AI-Powered Chatbot**
    - Provides instant answers to farming queries 💬
