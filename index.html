@@ -1,106 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DhaanGo</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/logo.png">
-    <script src="https://kit.fontawesome.com/6e98228717.js" crossorigin="anonymous"></script>
-    
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/logo.png" />
+    <script
+      src="https://kit.fontawesome.com/6e98228717.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <div class="main">
-            <div class="logo">
-                <a href="">
-                    <img src="images/logo.png" alt="DhaanGo Logo">
-                    <div>DhaanGo</div>
-                </a>
-            </div>
-            <div class="options">
-                <div>
-                    <a href="marketplace">MarketPlace</a>
-                </div>
-                <div>
-                    <a href="resources">Resources</a>
-                </div>
-                <div class="menu-item" onclick="toggleDropdown('khetwan')">
-                    <P>Khetwan</P>
-                    <div class="dropdown" id="khetwan">
-                        </div>
-                </div>
-                <div class="menu-item" onclick="toggleDropdown('tools')">
-                
-                    <p>Tools</p>
-                    <div class="dropdown" id="tools">
-                   
-                    </div>
-                </div>
-                <div class="menu-item" onclick="toggleDropdown('auth')">
-                    <p>Log in / Sign Up</p>
-                    
-                </div>
-                <div>
-                    <label class="switch">
-                        <input type="checkbox" id="theme-toggle">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
+      <div class="main">
+        <div class="logo">
+          <a href="">
+            <img src="images/logo.png" alt="DhaanGo Logo" />
+            <div>DhaanGo</div>
+          </a>
         </div>
+        <div class="options">
+            <div>
+              <a href="marketplace">Marketplace</a>
+            </div>
+            <div>
+              <a href="resources">Resources</a>
+            </div>
+            <div class="menu-item" onclick="toggleDropdown('khetwan')">
+              <p>Khetwan</p>
+              <div class="dropdown" id="khetwan">
+                <a href="#"><i class="fa-solid fa-handshake-angle"></i> P2P</a>
+                <a href="#"><i class="fa-brands fa-instagram"></i> Posts</a>
+              </div>
+            </div>
+            <div class="menu-item" onclick="toggleDropdown('tools')">
+              <p>Tools</p>
+              <div class="dropdown" id="tools">
+                <a href="#"><i class="fa-solid fa-indian-rupee-sign"></i> Profit Calculator</a>
+                <a href="#"><i class="fa-solid fa-arrow-trend-up"></i> MSP Rates</a>
+                <a href="#"><i class="fa-solid fa-cloud"></i> Weather Forecast</a>
+              </div>
+            </div>
+            <div class="menu-item" onclick="toggleDropdown('auth')">
+              <p>Join</p>
+              <div class="dropdown" id="auth">
+                <a href="#"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+                <a href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i> Log In</a>
+              </div>
+            </div>
+            <div>
+            <label class="switch">
+              <input type="checkbox" id="theme-toggle" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
     </nav>
+
     <div class="floating-dock-container">
-        <ul class="floating-dock">
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-house"></i>
-                    <span class="title">Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-book-open"></i>
-                    <span class="title">Resources</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="images/logo.png" alt="Aceternity Logo" />
-                    <span class="title">DhaanGo</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-users"></i>
-                    <span class="title">Community</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-gear"></i>
-                    <span class="title">Tools</span>
-                </a>
-            </li>
-            <!-- <li>
+      <ul class="floating-dock">
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-house"></i>
+            <span class="title">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-book-open"></i>
+            <span class="title">Resources</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/logo.png" alt="Aceternity Logo" />
+            <span class="title">DhaanGo</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-users"></i>
+            <span class="title">Community</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-gear"></i>
+            <span class="title">Tools</span>
+          </a>
+        </li>
+        <!-- <li>
                 <a href="#">
                     <i class="fa-solid fa-user"></i>
                     <span class="title">Profile</span>
                 </a>
             </li> -->
-        </ul>
+      </ul>
     </div>
-    
+
     <script src="script.js"></script>
-    <script>
-
-        
-            
-        </script>
-        
-    
-</body>
-
+    <script></script>
+  </body>
 </html>
