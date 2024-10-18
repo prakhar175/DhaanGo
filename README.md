@@ -8,15 +8,17 @@ DhaanGo is a comprehensive web application designed to empower farmers by addres
 
 1. **🌐 Dual Marketplace**
    - Connects farmers directly with businesses 🏪
-   - Facilitates buying and selling of agricultural products💰
+   - Facilitates buying and selling of agricultural products💰 between farmers and businesses without middlemen
+   - Provides a platform for businesses to sell their machinery and other agricultural-related items (including pesticides, fertilizers, seeds, etc.)
 
 2. **🤖 MittiMitra: AI-Powered Chatbot**
    - Provides instant answers to farming queries 💬
    - Features voice assistance for hands-free operation 🎤
+   - Pre-trained chatbot responses according to specific queries. 
 
-3. **📊 Live Market Rates**
+3. **📊 Tools**
    - Real-time MSP (Minimum Support Price) updates ⏱️
-   - Local market price information 📉
+   - Profit calculation tools 💵 and Land yield estimation 🌽📐
 
 4. **☁️ Weather and Crop Information**
    - Location-based weather forecasts 🌦️
@@ -40,11 +42,7 @@ DhaanGo is a comprehensive web application designed to empower farmers by addres
 
 9. **🌾 KhetWana: Community Platform**
    - Peer-to-peer chat functionality 💬
-   - Sharing of YouTube videos and other resources 🎥
-
-10. **📏 Agricultural Calculators**
-    - Profit calculation tools 💵
-    - Land yield estimation 🌽📐
+   - Sharing of resources 🎥 among the community of farmers (local and national)
 
 11. **🔗 API Integrations**
     - Weather API for accurate forecasts ☀️
@@ -61,7 +59,7 @@ DhaanGo is a comprehensive web application designed to empower farmers by addres
 
 ### Installation 🛠️
 
-
+The `requirements.txt` file consists of all the possible required libraries to run the chatbot.
 
 ## Usage 🚜
 
