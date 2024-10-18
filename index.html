@@ -13,14 +13,10 @@
 
 <body>
     <nav>
-        <video autoplay muted loop id="background-video">
-            <source src="images/bvideo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
         <div class="main">
             <div class="logo">
                 <a href="">
-                    <img src="images/logo.png" alt="">
+                    <img src="images/logo.png" alt="DhaanGo Logo">
                     <div>DhaanGo</div>
                 </a>
             </div>
@@ -31,18 +27,27 @@
                 <div>
                     <a href="resources">Resources</a>
                 </div>
-                <div>
-                    Khetwan
+                <div class="menu-item" onclick="toggleDropdown('khetwan')">
+                    <P>Khetwan</P>
+                    <div class="dropdown" id="khetwan">
+                        </div>
                 </div>
-                <div>Tools</div>
-                <div>Log in / Sign Up</div>
+                <div class="menu-item" onclick="toggleDropdown('tools')">
+                
+                    <p>Tools</p>
+                    <div class="dropdown" id="tools">
+                   
+                    </div>
+                </div>
+                <div class="menu-item" onclick="toggleDropdown('auth')">
+                    <p>Log in / Sign Up</p>
+                    
+                </div>
                 <div>
                     <label class="switch">
                         <input type="checkbox" id="theme-toggle">
                         <span class="slider"></span>
                     </label>
-                    
-
                 </div>
             </div>
         </div>
@@ -63,35 +68,31 @@
             </li>
             <li>
                 <a href="#">
-                    <i class="fa-solid fa-users"></i>
-                    <span class="title">Users</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
                     <img src="images/logo.png" alt="Aceternity Logo" />
                     <span class="title">DhaanGo</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fa-solid fa-gear"></i>
-                    <span class="title">Settings</span>
+                    <i class="fa-solid fa-users"></i>
+                    <span class="title">Community</span>
                 </a>
             </li>
             <li>
                 <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="title">Tools</span>
+                </a>
+            </li>
+            <!-- <li>
+                <a href="#">
                     <i class="fa-solid fa-user"></i>
                     <span class="title">Profile</span>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
     
-    
-    
-    
-    <div class="last">hiiiiidf</div>
     <script src="script.js"></script>
     <script>
 
