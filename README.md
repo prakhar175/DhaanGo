@@ -1,5 +1,3 @@
-Here’s the README file with stickers (represented by emojis) added:
-
 # 🌾 "DhaanGo: Cultivating Success, Harvesting Progress - By Farmers, For Farmers" 🌾
 
 ## Overview
