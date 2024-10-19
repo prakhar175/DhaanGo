@@ -5,9 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DhaanGo</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="images/logo.png" />
     <script src="https://kit.fontawesome.com/6e98228717.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
     <style>
         body,
         html {
@@ -34,7 +36,7 @@
             z-index: -1;
             /* Send the video to the background */
             transition: opacity 3s ease-in-out, transform 1s ease-in-out
-            /* Smooth transition for fade and scale */
+                /* Smooth transition for fade and scale */
         }
 
         /* Navbar styles */
@@ -42,6 +44,7 @@
             position: absolute;
             /* Keep navbar relative for shadow */
             z-index: 10;
+            background-color: rgba(18, 18, 18, 0.1);
             /* Ensure navbar is above the video */
         }
 
@@ -62,25 +65,175 @@
             margin-top: 20%;
             /* Adjust margin to position content */
         }
+
         nav {
             transition: opacity 0.3s ease;
         }
-        
+
+        /* For active dropdown toggle */
+
+
         nav.hidden {
-            opacity: 0; /* Fade out */
-            pointer-events: none; /* Prevent interaction when hidden */
+            opacity: 0;
+            /* Fade out */
+            pointer-events: none;
+            /* Prevent interaction when hidden */
+        }
+
+
+        body::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        nav .heading {
+            font-size: 120px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin-top: 20%;
+            z-index: 10;
+        }
+
+        .las {
+            margin-top: 10000%
+        }
+
+        #mm {
+            display: inline-block;
+            border-radius: 48%;
+            border: 3px solid transparent;
+            /* Set border to transparent to see the glow */
+            animation: rotate 4s linear infinite;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            z-index: 10;
+            box-shadow: 0 0 10px rgb(255, 118, 141), 0 0 20px rgba(255, 56, 89, 0.915), 0 0 30px pink;
+            /* Pinkish glow effect */
+            margin-top: 3px;
+            margin-left: 1px
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .video-background {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1;
+            white-space: nowrap;
+            font-size: 400%;
+            color: rgb(255, 251, 251);
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif; /* Using Montserrat */
+        }
+        .video-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1;
+            white-space: nowrap;
+            font-size: 400%;
+            color: rgb(255, 251, 251);
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif; /* Make sure to include the Google Font */
         }
         
+        .glow-button {
+            margin-top: 20px; /* Space between the text and button */
+            padding: 10px 10px; /* Button padding */
+            font-size: 0.36em; /* Adjust as needed */
+            color: white; /* Button text color */
+            background-color: transparent; /* Pinkish background */
+            border: 2px solid white; /* No border */
+            border-radius: 25px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: all 0.3s ease; 
+            font-family: 'Montserrat', sans-serif;/* Smooth transition for hover effect */
+            font-weight: bold;
+            
+            padding: 7px;
+            width:180px;
+            cursor: pointer;
+        }
+        
+        .glow-button:hover {
+            box-shadow: 0 0 10px rgb(231, 227, 227), 0 0 20px rgb(255, 255, 255), 0 0 30px pink; /* Stronger glow on hover */
+            transform: scale(1.05);
+            cursor: pointer; /* Slightly increase size on hover */
+            background-color: white;
+        }
+
+        .glow-button svg {
+            width: 20px; /* Adjusted width */
+            height: 20px; /* Adjusted height */
+            margin-right: 5%;
+            margin-left: 8%;
+            fill:white; /* Space between the icon and text */
+        }
+        button{
+            cursor: pointer;
+        }
         
     </style>
+
 </head>
 
 <body>
     <!-- Video Background -->
-    <video onscroll="document.video.style.opacity='1'" class="video-background" autoplay muted loop>
-        <source src="images/bvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div class="video-background">
+
+        <video onscroll="document.video.style.opacity='1'" class="video-background" autoplay muted loop>
+            <source src="images/bvideo.mp4" type="video/mp4">
+            <p #id="text"></p>
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+            <div class="typing-text">
+                <span class="text"></span>
+                <span class="blink">|</span>
+                <br>
+                <button class="glow-button">MittiMitra<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Navbar -->
     <nav class="navbar-shadow">
@@ -99,22 +252,21 @@
                     <a href="resources">Resources</a>
                 </div>
                 <div class="menu-item" onclick="toggleDropdown('khetwan')">
-                    <a href="chatapp">
-                        <p>Khetwan</p>
-                        <div class="dropdown" id="khetwan">
-                            <a href="#"><i class="fa-solid fa-handshake-angle"></i> P2P</a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i> Community</a>
-                        </div>
+                    <p>Khetwan</p>
+                    <div class="dropdown" id="khetwan">
+                        <a href="chatapp/users.php"><i class="fa-solid fa-handshake-angle"></i> P2P</a>
+                        <a href="chatapp/commitee"><i class="fa-brands fa-instagram"></i> Community</a>
+                    </div>
                     </a>
                 </div>
                 <div class="menu-item" onclick="toggleDropdown('tools')">
-                    <a href="Tools">
+                    <a href="tools">
                         <p>Tools</p>
-                        <div class="dropdown" id="tools">
+                        <!-- <div class="dropdown" id="tools">
                             <a href="#"><i class="fa-solid fa-indian-rupee-sign"></i> Profit Calculator</a>
                             <a href="#"><i class="fa-solid fa-arrow-trend-up"></i> MSP Rates</a>
                             <a href="#"><i class="fa-solid fa-cloud"></i> Weather Forecast</a>
-                        </div>
+                        </div> -->
                     </a>
                 </div>
                 <div class="menu-item" onclick="toggleDropdown('auth')">
@@ -133,7 +285,16 @@
                 </div>
             </div>
         </div>
+        <!-- <div class="heading">ndkn</div> -->
     </nav>
+
+    <button class="glow-button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24">
+            <path d="M12 2l-1.41 1.41L16.17 8H0v2h16.17l-5.58 5.59L12 22l10-10z"/>
+        </svg>
+        Link Text
+    </button>
+    
 
     <!-- Floating Dock (Optional) -->
     <div class="floating-dock-container">
@@ -145,19 +306,19 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="resources">
                     <i class="fa-solid fa-book-open"></i>
                     <span class="title">Resources</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <img src="images/logo.png" alt="Aceternity Logo" />
-                    <span class="title">DhaanGo</span>
+                <a href="">
+                    <img src="images/mm.jpg" alt="" id="mm" />
+                    <span class="title">MittiMitra</span>
                 </a>
             </li>
             <li>
-                <a href="chats">
+                <a href="chatapp/commitee">
                     <i class="fa-solid fa-users"></i>
                     <span class="title">Community</span>
                 </a>
@@ -217,6 +378,7 @@
             molestias repellat neque reprehenderit mollitia, aliquid totam sit fugit soluta ipsam a itaque incidunt
             inventore numquam?</p>
     </div>
+    <div class="las">lkdnlkkleqn eq</div>
     <script src="script.js"></script>
     <script>
         const lo = document.querySelector('.main .options .menu-item .login ')
@@ -240,32 +402,42 @@
 
                     document.getElementById("auth").style.display = "none"
                     lo.addEventListener("click", () => {
-                        window.location.href = "profile_main"
+                        window.location.href = "profile_main/login_form.php"
                     })
                 }
             }
         }
         loginxhr.send()
     </script>
+
     <script>
-        let lastScrollTop1 = 0;
-let scr=0;
-        window.addEventListener("scroll", () => {
-            const scr = window.scrollY;
-            const nav = document.querySelector("nav");
-        console.log(scr)
-        console.log("heyy")
-            // Check scroll direction and position
-            if (scr > 10 && scr > lastScrollTop1) {
-                nav.classList.add("hidden"); // Add class to hide
-            } else {
-                nav.classList.remove("hidden"); // Remove class to show
-            }
-        
-            lastScrollTop1 = scr <= 0 ? 0 : scr; // For Mobile or negative scrolling
-        });
-        
+        const typingText = document.querySelector('.text');
+const text = 'Cultivating Success, Harvesting Progress ';
+let index = 0;
+
+function type() {
+    if (index < text.length) {
+        typingText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 150);
+    } else {
+        setTimeout(clearText, 2000);
+    }
+}
+
+function clearText() {
+    typingText.textContent = '';
+    index = 0;
+    setTimeout(type, 200);
+}
+
+type();
+
+
     </script>
+
+
+
 </body>
 
 </html>
