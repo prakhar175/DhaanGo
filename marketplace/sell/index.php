@@ -8,7 +8,7 @@
         /* CSS styles for the page */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
             color: #333;
@@ -17,45 +17,49 @@
         header {
             background: #007bff;
             color: #fff;
-            padding: 10px 0;
+            padding: 15px 0;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         header a {
             color: #fff;
             text-decoration: none;
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: bold;
         }
 
         .main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
         }
 
         form {
             display: flex;
             flex-direction: column;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         form input[type="text"],
         form input[type="number"],
         form input[type="file"],
         form input[type="submit"] {
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
+            padding: 12px;
+            margin: 8px 0;
+            border: 2px solid #ccc;
             border-radius: 5px;
+            font-size: 16px;
         }
 
         form input[type="submit"] {
             background-color: #28a745;
             color: white;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         form input[type="submit"]:hover {
@@ -65,16 +69,45 @@
         h2 {
             margin-top: 20px;
             color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
         }
 
         p {
             margin: 5px 0;
+            font-size: 18px;
         }
 
         img {
             max-width: 100%;
             height: auto;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .no-products {
+            text-align: center;
+            font-size: 20px;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            .main {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            form input[type="text"],
+            form input[type="number"] {
+                font-size: 14px;
+            }
+
+            form input[type="submit"] {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -99,7 +132,7 @@
         // Check if the unique_id is set in the session
         if (isset($_SESSION['unique_id'])) {
             $unique_id = $_SESSION['unique_id'];
-            $query = "SELECT * FROM products WHERE unique_id = :unique_id";
+            $query = "SELECT * FROM products WHERE unique_id = :unique_id ORDER BY id DESC";
             $stmt = $pdo->prepare($query);
             $stmt->bindParam(':unique_id', $unique_id);
             $stmt->execute();
@@ -115,10 +148,10 @@
                     echo "<img src='" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['name']) . "'><br><br>";
                 }
             } else {
-                echo "<p>No products found.</p>"; // Handle case with no products
+                echo "<p class='no-products'>No products found.</p>"; // Handle case with no products
             }
         } else {
-            echo "<p>Please log in to see your products.</p>"; // Handle case with no unique_id
+            echo "<p class='no-products'>Please log in to see your products.</p>"; // Handle case with no unique_id
         }
         ?>
     </div>
