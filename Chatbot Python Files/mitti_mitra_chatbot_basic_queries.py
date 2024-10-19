@@ -148,7 +148,7 @@ while Help == 0:
             messages=[
                 {
                     "role": "user",
-                    "content": f"You are an agrilogist from India , without specifying you are an agrilogist, you have all the knowledge in farming in india, please give the answer to the query {Query}, i am a farmer so give the answer which can be very easy to understand, give a concise and short answer. The output should only include details about agriculture and farming in india. give the answer without any headings or subheadings, just plain text",
+                    "content": f"You are an agrilogist from India , without specifying you are an agrilogist, you have all the knowledge in farming in india, please give the answer to the query {Query}, i am a farmer so give the answer which can be very easy to understand, give a concise and short answer. The output should only include details about agriculture and farming in india. give the answer without any headings or subheadings, just plain text. Give the answer in less than 150 words.",
                 }
             ],
                 model="llama3-8b-8192",
@@ -175,7 +175,7 @@ while Help == 0:
             messages=[
                 {
                     "role": "user",
-                    "content": f"You are an agrilogist from India, without specifying you are an agrilogist ,you have all the knowledge in farming in India , please give the answer to the query {Query},also use the given {memory}, this is a collection of all the important parts from your previous chat, use this data to integrate a better solution. i am a farmer so give the answer which can be very easy to understand, keep the topics within the agricultural field, give a concise and short answer. The output should only include details about agriculture and farming in india. give the answer without any headings or subheadings, just plain text",
+                    "content": f"You are an agrilogist from India, without specifying you are an agrilogist ,you have all the knowledge in farming in India , please give the answer to the query {Query},also use the given {memory}, this is a collection of all the important parts from your previous chat, use this data to integrate a better solution. i am a farmer so give the answer which can be very easy to understand, keep the topics within the agricultural field, give a concise and short answer. The output should only include details about agriculture and farming in india. give the answer without any headings or subheadings, just plain text. Give the answer in less than 150 words.",
                 }
             ],
                 model="llama3-8b-8192",

@@ -20,7 +20,7 @@ chat_completion = client.chat.completions.create(
 messages=[
 {
 "role": "user",
-"content": f"for the given crop {Query},please give the type of fertilizer and pesticides to be used for best yield, showing the composition. Also tell the user to refer to our marketplace for further optionsof fertilizer according to the composition. give the answer without any headings or subheadings, just plain text",
+"content": f"for the given crop {Query},please give the type of fertilizer and pesticides to be used for best yield, showing the composition. Also tell the user to refer to our marketplace for further optionsof fertilizer according to the composition. give the answer without any headings or subheadings, just plain text. Give the answer in less than 150 words.",
 }
 ],
 model="llama3-8b-8192",

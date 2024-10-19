@@ -56,7 +56,7 @@ chat_completion = client.chat.completions.create(
     messages=[
         {
             "role": "user",
-            "content": f"Given the dictionary {daily_summary} with dates, the max , min temp and precipitation of the date, write a proper statement to summarize it, and this data is a future prediction of the next 5 daya for weather forecast for farmers,frame the statement in such ways only, the numbers should be specified only the highest and lowest of the whole 5 days and the precipiation amount. Give only plain text without any headings or subheadings",
+            "content": f"Given the dictionary {daily_summary} with dates, the max , min temp and precipitation of the date, write a proper statement to summarize it, and this data is a future prediction of the next 5 daya for weather forecast for farmers,frame the statement in such ways only, the numbers should be specified only the highest and lowest of the whole 5 days and the precipiation amount. Give only plain text without any headings or subheadings. Give the answer in less than 150 words.",
         }
     ],
     model="llama3-8b-8192",
