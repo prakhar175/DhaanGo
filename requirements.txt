@@ -13,5 +13,9 @@ pandas
 os
 io
 twilio
-
+kagglehub
+tensorflow
+uvicorn
+fastapi
+jinja
 
