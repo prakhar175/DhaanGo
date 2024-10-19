@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .query-button {
+            margin: 10px 0;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .query-button:hover {
+            background-color: #45a049;
+        }
+        #response-container {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Weather Forecast Chatbot</h1>
+    <h2>Get a Forecast</h2>
+
+    <button class="query-button" onclick="getWeatherForecast()">Get Weather Forecast</button>
+
+    <h2>Response</h2>
+    <div id="response-container"></div>
+
+    <script>
+        async function getWeatherForecast() {
+            const latitude = 26.2124;  // Gwalior location
+            const longitude = 78.1772;
+
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/weather_forecast/?latitude=${latitude}&longitude=${longitude}`);
+                const data = await response.json();
+                document.getElementById('response-container').innerHTML = `<p>${data.forecast_summary}</p>`;
+            } catch (error) {
+                console.error('Error fetching weather forecast:', error);
+            }
+        }
+    </script>
+
+</body>
+</html>
