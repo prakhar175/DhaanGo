@@ -149,6 +149,12 @@ function displayMSPRates() {
     }
   }
 
+  document.getElementById("calculate-now").addEventListener("click", function() {
+    // Scroll to the calculator section smoothly
+    document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+});
+
+
   // Show the MSP rates section
   const mspRatesSection = document.getElementById("msp-rates");
   mspRatesSection.classList.remove("hidden");
