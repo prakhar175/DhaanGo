@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather.css">
+    <link rel="icon" href="logomain.png">
+</head>
+
+<body>
+    <div class="card">
+        <!-- <header> 
+            <img src="logomain.png" alt="" class="logo">
+            <h1 style="font-weight:700;color:white;font-family:'segoe UI'">Friendify-Weather</h1>
+        </header> -->
+        <div class="search">
+            <input type="text" placeholder="Enter city name">
+            <button>
+                <img src="search.png" alt="Search">
+            </button>
+        </div>
+        <div class="current">
+            <button id="current">Get weather of your current location</button>
+        </div>
+        <div class="error"></div>
+        <div class="weather">
+            <img src="" class="weatherimage">
+            <h1 class="temp"></h1>
+            <h2 class="city"></h2>
+            <div class="col">
+                <div class="feelslike"></div>
+            </div>
+            <div class="class"></div>
+            <div class="detail">
+
+
+                <div class="col">
+                    <img src="humidity.png" alt="Humidity Icon" id="humidityimage">
+                    <div>
+                        <p class="humidity"></p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="wind.png" alt="Wind Icon" id="windimage">
+                    <div>
+
+                        <p class="wind"></p>
+                        <!-- <p class="windeg">12deg</p> -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="sun">
+                <div class="sunrise"></div>
+                <div class="sunset"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>
