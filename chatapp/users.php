@@ -718,7 +718,18 @@ align-items: center;
 text-align: center;
 justify-content: center;
 }
-
+.commitee a {
+    color:black;
+    font-weight:600;
+    font-size: 18px;
+    padding:10px
+}
+.heading{
+    font-weight: bold;
+    font-size: 20px;
+    color:grey;
+    text-decoration: underline;
+}
     </style>
 </head>
 
@@ -741,6 +752,7 @@ justify-content: center;
     </div>
 
     <div class="wrapper">
+        <a href="../" class="heading">DhaanGo</a>
         <div class="profiledetails">
             <!-- <div class="cross">
                 <h2>Friendify</h2>
@@ -808,7 +820,7 @@ justify-content: center;
             </header>
 <div class="commitee">
     <a href="commitee">
-    Chat with your commitee
+    Chat with your commiunity
     </a>
 </div>
             <div class="search">

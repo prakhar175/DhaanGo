@@ -29,20 +29,3 @@ toggleButton.addEventListener('click', () => {
         });
 
 
-// Get the dropdown and button elements
-const dropdown = document.querySelector('.dropdown');
-const button = document.querySelector('.dropdown-button');
-
-// Toggle the dropdown on button click
-button.addEventListener('click', function(event) {
-    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
-    event.stopPropagation(); // Prevent the click event from bubbling up
-});
-
-// Close the dropdown if clicked outside
-document.addEventListener('click', function(event) {
-    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.style.display = 'none';
-    }
-});
-

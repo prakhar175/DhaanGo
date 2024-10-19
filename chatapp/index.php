@@ -99,7 +99,10 @@ width:98%
 require "session.php";
 // echo $_SESSION['unique_id'];
 if (isset($_SESSION['unique_id'])){
-    header("Location: ./users.php");
+    header("Location: users.php");
+}
+else{
+    header("Location: index.php");
 }
 ?>
     <div class="wrapper">

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer's Tools</title>
+    <link rel="stylesheet" href="style9.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+        }
+
+        /* Weather Widget Styling */
+        .weather-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f0f4f8;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            width: 100%;
+        }
+
+        .weather-day {
+            display: inline-block;
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #e0eaf1;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            width: 90px;
+        }
+
+        .weather-day h2 {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+
+        .weather-day p {
+            margin: 2px 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        #weather {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .header-content {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .tool-section {
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }/* General Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container styling */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+/* Navigation Bar */
+.nav-container {
+  padding: 15px;
+  text-align: center;
+}
+
+.nav-container h1 {
+  color: white;
+  margin: 0;
+}
+
+.nav-links {
+  margin-top: 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Header Styling */
+.header-content {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.header-content h1 {
+  color: #4a90e2;
+}
+
+.header-content button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.header-content button:hover {
+  background-color: #357ab8;
+}
+
+/* Tool Section Styling */
+.tool-section {
+  margin-top: 30px;
+}
+
+.tool-section h2 {
+  color: #4a90e2;
+  border-bottom: 2px solid #4a90e2;
+  padding-bottom: 5px;
+}
+
+/* Profit Calculator Styling */
+.calculator {
+  background-color: #e6f7ff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin: 10px 0;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.calculator button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.calculator button:hover {
+  background-color: #357ab8;
+}
+
+/* MSP Rates Table Styling */
+#msp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+#msp-table th, #msp-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+#msp-table th {
+  background-color: #4a90e2;
+  color: white;
+}
+
+#msp-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Weather Widget Styling */
+.weather-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f0f4f8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+
+.weather-day {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #e0eaf1;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  width: 90px;
+}
+
+.weather-day h2 {
+  margin: 5px 0;
+  font-size: 1.1em;
+}
+
+.weather-day p {
+  margin: 2px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+#weather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+footer p {
+  margin: 0;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="nav-container">
+        <h1>Farmer's Tools</h1>
+        <div class="nav-links">
+            <a href="#profit-calculator">Profit Calculator</a>
+            <a href="#msp-rates">MSP Rates</a>
+            <a href="#weather-forecast" id="weather_forecast">Weather Forecast</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <h1>Welcome to the Farmer's Tools</h1>
+            <p>Calculate profits, check MSP rates, and get weather forecasts.</p>
+            <button id="get-started">Get Started</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="profit-calculator" class="tool-section">
+            <h2>Profit Calculator</h2>
+            <div class="calculator">
+                <div class="input-group">
+                    <label for="crop">Crop Name:</label>
+                    <input type="text" id="crop" placeholder="Enter crop name" />
+                    <div id="dropdown" class="dropdown"></div>
+                </div>
+                <div class="input-group">
+                    <label for="area">Land Area (in acres):</label>
+                    <input type="number" id="area" placeholder="Enter land area" />
+                </div>
+                <div class="input-group">
+                    <label for="additional-costs">Additional Costs (optional):</label>
+                    <input type="number" id="additional-costs" placeholder="Enter additional costs" />
+                </div>
+                <button id="calculate">Calculate Profit</button>
+            </div>
+            <div id="results" class="hidden"></div>
+        </section>
+
+        <section id="msp-rates" class="tool-section hidden">
+            <h2>MSP Rates</h2>
+            <table id="msp-table">
+                <thead>
+                    <tr>
+                        <th>Crop</th>
+                        <th>Variety</th>
+                        <th>MSP (Rs/quintal)</th>
+                    </tr>
+                </thead>
+                <tbody id="msp-table-body"></tbody>
+            </table>
+        </section>
+
+        <section id="weather-forecast" class="tool-section">
+            <h2>Weather Forecast</h2>
+            <div id="weather" class="weather-display"></div>
+            <button id="get-weather">Get Current Weather</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Farmer's Tools. All rights reserved.</p>
+    </footer>
+    
+    <script src="script1.js"></script>
+    <script>
+      const weatherDiv = document.getElementById("weather");
+      const weatherButton = document.getElementById("get-weather");
+      
+      weatherButton.addEventListener("click", getLocation); // Add event listener to the button
+      
+      function getLocation() {
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition, showError);
+          } else {
+              weatherDiv.textContent = "Geolocation is not supported by this browser.";
+          }
+      }
+      
+      async function currentWeather(lat, lon) {
+          const apiid = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`;
+          const response = await fetch(apiid);
+          const data = await response.json();
+          console.log(data);
+          if (response.ok) {
+              displayWeather(data); // Call the function to display weather
+          } else {
+              displayError();
+          }
+      }
+      
+      function showPosition(position) {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          currentWeather(lat, lon); // Fetch current weather using latitude and longitude
+      }
+      
+      function showError(error) {
+          switch (error.code) {
+              case error.PERMISSION_DENIED:
+                  weatherDiv.textContent = "User denied the request for Geolocation.";
+                  break;
+              case error.POSITION_UNAVAILABLE:
+                  weatherDiv.textContent = "Location information is unavailable.";
+                  break;
+              case error.TIMEOUT:
+                  weatherDiv.textContent = "The request to get user location timed out.";
+                  break;
+              case error.UNKNOWN_ERROR:
+                  weatherDiv.textContent = "An unknown error occurred.";
+                  break;
+          }
+          displayError();
+      }
+      
+      function displayError() {
+          weatherDiv.textContent = "Error fetching weather data. Please try again.";
+      }
+      
+      function displayWeather(data) {
+          const temperature = data.hourly.temperature_2m; // Assuming this is an array of hourly temperatures
+          const windSpeed = data.current.wind_speed_10m;
+      
+          // Initialize an array to store min and max temperatures for each of the 7 days
+          let dailyTemperatures = new Array(14).fill(0); // This will hold [min1, max1, min2, max2, ...]
+          let daysOfWeek = []; // Array to hold the day names for the next 7 days
+          
+          // Get today's date
+          const today = new Date();
+          
+          // Calculate min and max for each 24-hour period (2 elements for each day)
+          for (let i = 0; i < 7; i++) {
+              const start = i * 24; // Starting index for the day
+              const end = start + 24; // Ending index for the day
+              
+              // Slice the temperature array for the day
+              const dailyTemps = temperature.slice(start, end);
+              
+              // Calculate min and max for the day
+              const minTemp = Math.min(...dailyTemps);
+              const maxTemp = Math.max(...dailyTemps);
+              
+              // Store min and max temperatures in the dailyTemperatures array
+              dailyTemperatures[i * 2] = minTemp;     // Min temperature at even index
+              dailyTemperatures[i * 2 + 1] = maxTemp; // Max temperature at odd index
+      
+              // Calculate the day of the week
+              const nextDate = new Date(today);
+              nextDate.setDate(today.getDate() + i); // Increment the date by i days
+              daysOfWeek.push(nextDate.toLocaleString('en-US', { weekday: 'long' })); // Get the day name
+          }
+      
+          // Update the weather display
+          weatherDiv.innerHTML = `<h2>Current Temperature: ${temperature[0]}°C</h2><p>Wind Speed: ${windSpeed} m/s</p>`;
+          
+          // Append daily temperature information
+          for (let i = 0; i < 7; i++) {
+              weatherDiv.innerHTML += `
+                  <div class="weather-day">
+                      <h2>${daysOfWeek[i]}</h2>
+                      <p>Min Temperature: ${dailyTemperatures[i * 2]}°C</p>
+                      <p>Max Temperature: ${dailyTemperatures[i * 2 + 1]}°C</p>
+                  </div>
+              `;
+          }
+      }
+      
+  </script>
+</body>
+</html>
