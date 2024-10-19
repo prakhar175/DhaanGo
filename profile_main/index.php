@@ -11,15 +11,15 @@ if (!isset($_SESSION['unique_id'])) {
     exit;
 }
 
-$fname = $_SESSION['fname'];
-$lname = $_SESSION['lname'];
-
+// $fname = $_SESSION['fname'];
+// $lname = $_SESSION['lname'];
+$unqiue_id=$_SESSION['unique_id'];
 // Prepare SQL query
-$query = "SELECT * FROM users WHERE fname = :fname AND lname = :lname";
+$query = "SELECT * FROM users WHERE unique_id=:unique_id";
 $stmt = $pdo->prepare($query);
-$stmt->bindParam(':fname', $fname);
-$stmt->bindParam(':lname', $lname);
-
+// $stmt->bindParam(':fname', $fname);
+// $stmt->bindParam(':lname', $lname);
+$stmt->bindParam(":unique_id",$unique_id);
 if ($stmt->execute()) {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 } else {
@@ -67,15 +67,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
             margin-top: 20px;
             max-width: 600px;
         }
+
         .alert {
             margin-bottom: 15px;
         }
+
         .profile-photo {
             max-width: 100%;
             height: auto;
             border-radius: 50%;
             margin-bottom: 15px;
         }
+
         .location {
             margin-top: 20px;
             padding: 15px;
@@ -83,8 +86,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
             border-radius: 5px;
             background-color: #f9f9f9;
         }
+
         .logout {
             margin-top: 10px;
+        }
+
+        h2 {
+            margin-left: 34%;
+            font-size: 49px;
+        }
+        a{
+            text-decoration: none;
         }
     </style>
 </head>
@@ -97,7 +109,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
         <?php if (isset($errorMessage)): ?>
             <div class="alert alert-danger"><?= htmlspecialchars($errorMessage) ?></div>
         <?php endif; ?>
-
+        <a href="../">
+            <h2>DhaanGo</h2>
+        </a>
         <?php if ($result): ?>
             <h3 class="text-center">Welcome <?= htmlspecialchars($fname) . " " . htmlspecialchars($lname) ?></h3>
             <div class="text-center">
@@ -111,7 +125,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
             <form method="POST">
                 <div class="form-group">
                     <label for="email">Update Email:</label>
-                    <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($result['email']) ?>" required>
+                    <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($result['email']) ?>"
+                        required>
                 </div>
                 <button type="submit" name="update" class="btn btn-primary">Update</button>
             </form>
@@ -127,12 +142,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
                 <div id="location" class="mt-3"></div>
             </div>
         <?php else: ?>
-            <div class="alert alert-warning">User not found in the database. Redirecting to the login page in 5 seconds.</div>
+            <div class="alert alert-warning">User not found in the database. Redirecting to the login page in 5 seconds.
+            </div>
             <?php header("refresh:5;url=../login/login.php"); ?>
         <?php endif; ?>
     </div>
 
     <script src="script.js"></script>
+    <script>
+        setInterval(() => {
+            window.location.href="../"
+        }, 2000);
+    </script>
 </body>
 
 </html>

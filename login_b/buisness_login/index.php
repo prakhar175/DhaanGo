@@ -93,7 +93,7 @@ if (isset($_GET['code'])) {
 
         if ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $_SESSION['unique_id'] = $result['unique_id'];
-            header('Location: ../'); // Redirect to your profile page
+            header('Location: ../../'); // Redirect to your profile page
             exit;
         } else {
             echo "User not found after insertion attempt. Please try logging in again.";
