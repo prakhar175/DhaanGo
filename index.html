@@ -159,8 +159,10 @@
             font-size: 400%;
             color: rgb(255, 251, 251);
             font-weight: bold;
-            font-family: 'Montserrat', sans-serif; /* Using Montserrat */
+            font-family: 'Montserrat', sans-serif;
+            /* Using Montserrat */
         }
+
         .video-overlay {
             position: absolute;
             top: 50%;
@@ -172,45 +174,58 @@
             font-size: 400%;
             color: rgb(255, 251, 251);
             font-weight: bold;
-            font-family: 'Montserrat', sans-serif; /* Make sure to include the Google Font */
+            font-family: 'Montserrat', sans-serif;
+            /* Make sure to include the Google Font */
         }
-        
+
         .glow-button {
-            margin-top: 20px; /* Space between the text and button */
-            padding: 10px 10px; /* Button padding */
-            font-size: 0.36em; /* Adjust as needed */
-            color: white; /* Button text color */
-            background-color: transparent; /* Pinkish background */
-            border: 2px solid white; /* No border */
-            border-radius: 25px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: all 0.3s ease; 
-            font-family: 'Montserrat', sans-serif;/* Smooth transition for hover effect */
+            margin-top: 20px;
+            /* Space between the text and button */
+            padding: 10px 10px;
+            /* Button padding */
+            font-size: 0.36em;
+            /* Adjust as needed */
+            color: white;
+            /* Button text color */
+            background-color: transparent;
+            /* Pinkish background */
+            border: 2px solid white;
+            /* No border */
+            border-radius: 25px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            /* Smooth transition for hover effect */
             font-weight: bold;
-            
+
             padding: 7px;
-            width:180px;
+            width: 180px;
+            cursor: pointer;
+            z-index: 10;
             cursor: pointer;
         }
-        
+
         .glow-button:hover {
-            box-shadow: 0 0 10px rgb(231, 227, 227), 0 0 20px rgb(255, 255, 255), 0 0 30px pink; /* Stronger glow on hover */
+            box-shadow: 0 0 10px rgb(231, 227, 227), 0 0 20px rgb(255, 255, 255), 0 0 30px pink;
+            /* Stronger glow on hover */
             transform: scale(1.05);
-            cursor: pointer; /* Slightly increase size on hover */
+            cursor: pointer;
+            /* Slightly increase size on hover */
             background-color: white;
         }
 
         .glow-button svg {
-            width: 20px; /* Adjusted width */
-            height: 20px; /* Adjusted height */
+            width: 20px;
+            /* Adjusted width */
+            height: 20px;
+            /* Adjusted height */
             margin-right: 5%;
             margin-left: 8%;
-            fill:white; /* Space between the icon and text */
+            fill: white;
+            /* Space between the icon and text */
         }
-        button{
-            cursor: pointer;
-        }
-        
     </style>
 
 </head>
@@ -229,7 +244,11 @@
                 <span class="text"></span>
                 <span class="blink">|</span>
                 <br>
-                <button class="glow-button">MittiMitra<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
+                <button class="glow-button">MittiMitra<svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z" />
+                    </svg>
                 </button>
             </div>
         </div>
@@ -245,8 +264,17 @@
                 </a>
             </div>
             <div class="options">
-                <div>
-                    <a href="marketplace">Marketplace</a>
+                <!-- <div class="mp_dropdown">
+                    <a href="marketplace">
+                        <p class="mp">Marketplace</p>
+                    </a>
+                </div> -->
+                <div class="menu-item" onclick="toggleDropdown('marketplace')">
+                    <p>Marketplace</p>
+                    <div class="dropdown" id="marketplace">
+                        <a href="marketplace"><i class="fa-solid fa-handshake-angle"></i>Buy items</a>
+                        <a href="marketplace/sell"><i class="fa-brands fa-instagram"></i> Sell items</a>
+                    </div>
                 </div>
                 <div>
                     <a href="resources">Resources</a>
@@ -290,11 +318,11 @@
 
     <button class="glow-button">
         <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24">
-            <path d="M12 2l-1.41 1.41L16.17 8H0v2h16.17l-5.58 5.59L12 22l10-10z"/>
+            <path d="M12 2l-1.41 1.41L16.17 8H0v2h16.17l-5.58 5.59L12 22l10-10z" />
         </svg>
         Link Text
     </button>
-    
+
 
     <!-- Floating Dock (Optional) -->
     <div class="floating-dock-container">
@@ -412,30 +440,35 @@
 
     <script>
         const typingText = document.querySelector('.text');
-const text = 'Cultivating Success, Harvesting Progress ';
-let index = 0;
+        const text = 'Cultivating Success, Harvesting Progress ';
+        let index = 0;
 
-function type() {
-    if (index < text.length) {
-        typingText.textContent += text.charAt(index);
-        index++;
-        setTimeout(type, 150);
-    } else {
-        setTimeout(clearText, 2000);
-    }
-}
+        function type() {
+            if (index < text.length) {
+                typingText.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 150);
+            } else {
+                setTimeout(clearText, 2000);
+            }
+        }
 
-function clearText() {
-    typingText.textContent = '';
-    index = 0;
-    setTimeout(type, 200);
-}
+        function clearText() {
+            typingText.textContent = '';
+            index = 0;
+            setTimeout(type, 200);
+        }
 
-type();
+        type();
 
 
     </script>
-
+    <script>
+        const mp = document.querySelector(".mp")
+        mp.addEventListener('mouseover', () => {
+            document.querySelector(".mp_dropdown").style.display = "block"
+        })
+    </script>
 
 
 </body>
