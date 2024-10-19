@@ -67,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // Execute the query
                     if ($stmt->execute()) {
                         echo "Product registered successfully!";
+                        header("Location: index.php");
                     } else {
                         echo "Failed to register the product.";
                     }
