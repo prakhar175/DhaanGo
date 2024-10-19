@@ -1,184 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tools</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            background-color: #f7fafc;
-            color: #4a5568;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        nav {
-            background-color: #000;
-        }
-
-        nav img {
-            width: 100%;
-            height: auto;
-        }
-
-        nav h1 {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: #cbd5e0;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            background-color: #4a5568;
-            color: white;
-        }
-
-        header {
-            position: relative;
-            height: 400px;
-            background-image: url('/api/placeholder/1200/400');
-            background-size: cover;
-            background-position: center;
-        }
-
-        header .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-
-        header p {
-            font-size: 1.25rem;
-            margin-top: 0.5rem;
-        }
-
-        main {
-            padding: 2rem 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-            padding: 0 1rem;
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .card p {
-            margin-bottom: 1rem;
-        }
-
-        .button {
-            background-color: #000;
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 0.375rem;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .button:hover {
-            background-color: #4a5568;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 4rem;
-        }
-
-        .nav-links {
-            display: none;
-        }
-
-        @media (min-width: 640px) {
-            .nav-links {
-                display: flex;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <div><img src="/api/placeholder/1200/400" alt="Harvest Image"></div>
-        <div class="nav-container">
-            <div class="flex-shrink-0">
-                <h1>
-                    <i class="fa-solid fa-screwdriver-wrench"></i> Tools
-                </h1>
-            </div>
-            <div class="nav-links">
-                <a href="#">Profit Calculator</a>
-                <a href="#">MSP Rates</a>
-                <a href="#">Weather Forecast</a>
-            </div>
-        </div>
+    <title>Farmer's Tools</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="nav-container">
+      <div class="flex-shrink-0">
+        <h1>Farmer's Tools</h1>
+      </div>
+      <div class="nav-links">
+        <a href="#profit-calculator">Profit Calculator</a>
+        <a href="#msp-rates">MSP Rates</a>
+        <a href="#weather-forecast">Weather Forecast</a>
+      </div>
     </nav>
 
     <header>
-        <div class="content">
-            <h1>Welcome to the Farmer's Tools</h1>
-            <p>Calculate profits, check MSP rates, and get weather forecasts.</p>
-        </div>
+      <div class="header-content">
+        <h1>Welcome to the Farmer's Tools</h1>
+        <p>Calculate profits, check MSP rates, and get weather forecasts.</p>
+        <button id="get-started">Get Started</button>
+      </div>
     </header>
 
     <main>
-        <div class="container">
-            <div class="card">
-                <h2>Profit Calculator</h2>
-                <p>Estimate your profit based on land area and crop.</p>
-                <button class="button">Calculate Now</button>
-            </div>
-            
-
-            <div class="card">
-                <h2>MSP Rates</h2>
-                <p>Check the latest Minimum Support Prices (MSP) for various crops.</p>
-                <button class="button">View MSP</button>
-            </div>
-
-            <div class="card">
-                <h2>Weather Forecast</h2>
-                <p>Get real-time weather forecasts for your region.</p>
-                <button class="button">Check Forecast</button>
-            </div>
+      <section id="profit-calculator" class="tool-section">
+        <h2>Profit Calculator</h2>
+        <div class="calculator">
+          <div class="input-group">
+            <label for="crop">Crop Name:</label>
+            <input type="text" id="crop" placeholder="Enter crop name" />
+            <div id="dropdown" class="dropdown"></div>
+          </div>
+          <div class="input-group">
+            <label for="area">Land Area (in acres):</label>
+            <input type="number" id="area" placeholder="Enter land area" />
+          </div>
+          <div class="input-group">
+            <label for="additional-costs">Additional Costs (optional):</label>
+            <input
+              type="number"
+              id="additional-costs"
+              placeholder="Enter additional costs"
+            />
+          </div>
+          <button id="calculate">Calculate Profit</button>
         </div>
+        <div id="results" class="hidden"></div>
+      </section>
+
+      <section id="msp-rates" class="tool-section hidden">
+        <h2>MSP Rates</h2>
+        <table id="msp-table">
+          <thead>
+            <tr>
+              <th>Crop</th>
+              <th>Variety</th>
+              <th>MSP (Rs/quintal)</th>
+            </tr>
+          </thead>
+          <tbody id="msp-table-body"></tbody>
+        </table>
+      </section>
+
+      <section id="weather-forecast" class="tool-section">
+        <h2>Weather Forecast</h2>
+        <p>Coming soon...</p>
+      </section>
     </main>
 
+    <footer>
+      <p>&copy; 2024 Farmer's Tools. All rights reserved.</p>
+    </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
