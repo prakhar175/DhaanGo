@@ -51,11 +51,6 @@ DhaanGo is a comprehensive web application designed to empower farmers by addres
 12. **🚢 Import/Export Facilitation**
     - Platform for managing imports and exports for entire areas 🌍📦
 
-## Getting Started
-
-### Prerequisites 📋
-
-
 
 ### Installation 🛠️
 
@@ -69,19 +64,11 @@ After installation, you can access the DhaanGo platform through your web browser
 - **Market Rates**: Navigate to the ‘Market’ section for real-time price updates. 📈
 - **KhetWana**: Join the community platform to connect with other farmers and share experiences. 👨‍🌾🤝
 
-For detailed usage instructions, please refer to our [User Guide](link-to-user-guide). 📖
-
-## Contributing 🤝
-
-We welcome contributions from the community. Please read our [CONTRIBUTING.md](link-to-contributing-guide) for details on our code of conduct and the process for submitting pull requests. 🚀
 
 ## Support 📞
 
-If you encounter any issues or have questions, please file an issue on our GitHub repository or contact our support team at support@dhaango.com. ✉️
+If you encounter any issues or have questions, please file an issue on our GitHub repository or contact our support team at shreeyans1298@gmail.com / prakhar.k2004@gmail.com / adityakurani26@gmail.com / akshat35tiwari@gmail.com. ✉️
 
-## License 📜
-
-This project is licensed under the MIT License - see the [LICENSE.md](link-to-license) file for details. ✅
 
 ## Acknowledgments 🙏
 
