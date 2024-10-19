@@ -94,35 +94,35 @@ img {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    padding-left: 15px;
-    padding-bottom: 10px;
-  }
-  
-  .logo img {
-   width:3rem;
-   height: 3rem;
-    margin-right: 5px;
-    padding-top: 5px;
-    transition: transform 0.3s ease;
-  }
-  
-  .logo img:hover {
-    transform: scale(1.1);
-  }
-  
-  .logo a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-size: 24px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 2px;
-  }
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-bottom: 10px;
+}
+
+.logo img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 5px;
+  padding-top: 5px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.logo a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 24px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 2px;
+}
 
 /*===== CLASS CSS ===== */
 .section {
@@ -230,7 +230,6 @@ img {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/*===== HOME =====*/
 .home {
   background-color: var(--dark-color-lighten);
   overflow: hidden;
@@ -238,6 +237,9 @@ img {
 
 .home__container {
   height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .home__sneaker {
@@ -250,16 +252,38 @@ img {
 .home__shape {
   width: 220px;
   height: 220px;
-  background-color:rgba(26, 26, 26, 0.865);
+  background-color: rgba(26, 26, 26, 0.865);
   border-radius: 50%;
 }
 
 .home__img {
   position: absolute;
   top: 1.5rem;
-  max-width:fit-content;
-  width:600px;
+  max-width: fit-content;
+  width: 600px;
   transform: var(--rotate-img);
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.3s ease-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) var(--rotate-img);
+  }
+  50% {
+    transform: translateY(-50px) var(--rotate-img);
+  }
+  100% {
+    transform: translateY(0px) var(--rotate-img);
+  }
+}
+
+
+.home__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 50%;
 }
 
 .home__new {
@@ -271,14 +295,14 @@ img {
 
 .home__title {
   font-size: var(--bigger-font-size);
-  margin-bottom: var(--mb-1);
+  margin-bottom: var(--mb-2);
 }
 
 .home__description {
-  margin-bottom: var(--mb-6);
+  margin-bottom: var(--mb-3);
+  font-size: large;
 }
 
-/*BUTTONS*/
 .button {
   display: inline-block;
   background-color: var(--dark-color);
@@ -292,23 +316,32 @@ img {
   transform: translateY(-0.25rem);
 }
 
-.button-light {
-  display: inline-flex;
-  color: var(--dark-color);
-  font-weight: var(--font-bold);
-  align-items: center;
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .home__container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home__content {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .home__sneaker {
+    margin-bottom: var(--mb-4);
+  }
+
+  .home__img {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
-.button-icon {
-  font-size: 1.25rem;
-  margin-left: var(--mb-1);
-  transition: 0.3s;
-}
+/* ... (previous CSS remains the same) ... */
 
-.button-light:hover .button-icon {
-  transform: translateX(0.25rem);
-}
 
+/* ... (rest of the CSS remains the same) ... */
 /*===== FEATURED =====*/
 .featured__container {
   row-gap: 2rem;
@@ -395,18 +428,16 @@ img {
   padding: 2rem;
   border-radius: 0.5rem;
   transition: 0.3s;
-  
-
 }
 .collection__img {
-    position: relative;
-    display: flex;
-    height: 250px;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    transition: 0.3s;
-    padding-left: 5%;
-  }
+  position: relative;
+  display: flex;
+  height: 250px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  padding-left: 5%;
+}
 
 .collection__data {
   align-self: flex-end;
@@ -454,7 +485,7 @@ img {
 }
 
 .offer__img {
-  width: 153px;
+  width: fit-content;
 }
 
 /*===== NEW COLLECTION  =====*/
@@ -649,3 +680,136 @@ img {
     left: -3rem;
   }
 }
+/* ... (previous CSS code remains the same) ... */
+
+/* Updated styles for a more professional look */
+.header-1 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav__link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--dark-color);
+  transition: width 0.3s ease;
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+  width: 100%;
+}
+
+.sneaker {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2c2c2c;
+}
+.cart-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.cart-modal.show {
+  display: block; /* Show when the 'show' class is added */
+}
+
+.cart-modal h2 {
+  margin: 0 0 10px;
+}
+
+.cart-items {
+  margin-bottom: 10px;
+}
+
+.close-cart {
+  background: #f00;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.close-cart {
+  background: #f00; /* Red background */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+/* ... (rest of the CSS code remains the same) ... */
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/*===== VARIABLES CSS =====*/
+:root {
+  /* ... (existing variables remain the same) ... */
+
+  /*===== Animation =====*/
+  --animate-duration: 1s;
+  --animate-delay: 0.5s;
+}
+
+/* ... (existing CSS remains the same until the home section) ... */
+
+/*===== HOME =====*/
+.home {
+  background-color: var(--dark-color-lighten);
+  overflow: hidden;
+}
+
+.home__container {
+  height: calc(100vh - var(--header-height));
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp var(--animate-duration) ease-out var(--animate-delay) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home__sneaker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+/* ... (rest of the existing CSS remains the same) ... */
+
+/* Add this at the end of your CSS file */
+.animate-home {
+  animation: fadeInUp var(--animate-duration) ease-out forwards;
+}
+
+/* ... (rest of the CSS code remains the same) ... */
