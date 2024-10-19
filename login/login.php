@@ -22,7 +22,8 @@ $client->addScope("email");
 $client->addScope("profile");
 
 // Generate a random unique ID for the user
-function generateRandomNumber() {
+function generateRandomNumber()
+{
     return rand(100000, 999999); // Random number between 100000 and 999999
 }
 
@@ -61,12 +62,21 @@ if (isset($_GET['code'])) {
         $_SESSION['email_address'],
         $_SESSION['profile_photo']
     ]);
-
+    $stmt1 = $pdo->prepare("INSERT INTO users_main (unique_id, fname, lname, email, profile_photo) 
+    VALUES (?, ?, ?, ?, ?)");
+    $stmt1->execute([
+        $randomNumber,
+        $_SESSION['fname'],
+        $_SESSION['lname'],
+        $_SESSION['email'],
+        $_SESSION['profile_photo']
+    ]);
+    // $stmt1->execute();
     // Check for successful insertion
     if ($stmt->rowCount() > 0) {
         // Store unique ID in the session
         $_SESSION['unique_id'] = $randomNumber;
-        header('Location: ../profile_main'); // Redirect to your profile page
+        header('Location: ../'); // Redirect to your profile page
         exit;
     } else {
         // Fetch existing user information if insertion fails
@@ -75,10 +85,10 @@ if (isset($_GET['code'])) {
         $stmt->bindParam(':fname', $_SESSION['fname']);
         $stmt->bindParam(':lname', $_SESSION['lname']);
         $stmt->execute();
-        
+
         if ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $_SESSION['unique_id'] = $result['unique_id'];
-            header('Location: ../profile_main'); // Redirect to your profile page
+            header('Location: ../'); // Redirect to your profile page
             exit;
         } else {
             echo "User not found after insertion attempt. Please try logging in again.";
@@ -93,6 +103,7 @@ if (isset($_GET['code'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,6 +114,7 @@ if (isset($_GET['code'])) {
             background-color: #f4f4f4;
             padding: 20px;
         }
+
         .container {
             max-width: 400px;
             margin: auto;
@@ -111,9 +123,11 @@ if (isset($_GET['code'])) {
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             text-align: center;
         }
+
         .google-login-button {
             display: inline-block;
             padding: 10px 20px;
@@ -126,19 +140,22 @@ if (isset($_GET['code'])) {
             width: 90%;
             margin-bottom: 20px;
         }
+
         .google-login-button:hover {
             background-color: #357ae8;
         }
+
         input[type="text"],
         input[type="number"],
         input[type="email"],
         input[type="password"] {
-            width: 100%;
+            width: 94%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         button {
             width: 100%;
             padding: 10px;
@@ -148,14 +165,52 @@ if (isset($_GET['code'])) {
             border-radius: 5px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #218838;
         }
+
+        img {
+            width: 50px;
+            height: 40px
+        }
+
+        .container a {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            text-align: Center;
+            align-items: center;
+        }
+
+        div {
+            margin-left: 48%;
+            font-weight: bold;
+
+        }
+
+        a div {
+            margin-left: 10%
+        }
+
+        h3 {
+            margin-left: 34%
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h1>Sign Up</h1>
+        <a href="../">
+            <h1>DhaanGo</h1>
+        </a>
+        <h3>Sign Up/Log In</h3>
         <form action="signup.php" method="post">
             <input type="text" name="fname" placeholder="Enter your first name" required>
             <input type="text" name="lname" placeholder="Enter your last name" required>
@@ -164,8 +219,14 @@ if (isset($_GET['code'])) {
             <input type="password" name="password" placeholder="Enter your password" required>
             <button type="submit">Submit</button>
         </form>
-        <br><br>
-        <a href="<?php echo htmlspecialchars($client->createAuthUrl()); ?>" class="google-login-button">Login with Google</a>
+        <br>
+        <div>or</div>
+        <br>
+        <a href="<?php echo htmlspecialchars($client->createAuthUrl()); ?>" class="google-login-button">
+            <div><img src="../images/googlelogomain'.png" alt=""></div>
+            <div>Login /SignUp with Google</div>
+        </a>
     </div>
 </body>
+
 </html>

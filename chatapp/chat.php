@@ -16,59 +16,70 @@ require "details.php";
     <link rel="icon" href="logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style7.css">
     <style>
-
-.profiledetails.active {
-    display: block;
-    animation: slide 1.2s ease;
-}
-
-@keyframes slide {
-    from {
-        top: 14%;
-        opacity: 0.4;
-    }
-
-    to {
-        top: 40%;
-        opacity: 1;
-    }
-}
-.profiledetails{
-    top:40% 
-}
-@media screen and (max-width:450px){
-    @keyframes slide {
-        from{
-            top:14%;
+        .profiledetails.active {
+            display: block;
+            animation: slide 1.2s ease;
         }
-        to{
-            top:40%
+
+        @keyframes slide {
+            from {
+                top: 14%;
+                opacity: 0.4;
+            }
+
+            to {
+                top: 40%;
+                opacity: 1;
+            }
         }
-    }
-    .profiledetails{
-        top:27%;
-        width:80%
-    }
-    .images{
-        margin-top:-31%
-    }
-    
-}
-.profiledetails{
-    top:40% 
-}
-.detail{
-    /* color:red; */
-    margin-top:6%
-}
-.statusraec{
-    color:Red;
-    font-weight: bold;
-}
-.profiledetails img{
-    width:56px;
-    height:55px
-}
+
+        .profiledetails {
+            top: 40%
+        }
+
+        @media screen and (max-width:450px) {
+            @keyframes slide {
+                from {
+                    top: 14%;
+                }
+
+                to {
+                    top: 40%
+                }
+            }
+
+            .profiledetails {
+                top: 27%;
+                width: 80%
+            }
+
+            .images {
+                margin-top: -31%
+            }
+
+        }
+
+        .profiledetails {
+            top: 40%
+        }
+
+        .detail {
+            /* color:red; */
+            margin-top: 6%
+        }
+
+        .statusraec {
+            color: Red;
+            font-weight: bold;
+        }
+
+        .profiledetails img {
+            width: 56px;
+            height: 55px
+        }
+        .details{
+            margin-left:10%
+        }
     </style>
 </head>
 
@@ -114,8 +125,12 @@ require "details.php";
                     </div>
 
                     <div class="profileimage">
-                        <img src="images/<?php echo htmlspecialchars($userImg); ?>"
-                            alt="<?php echo htmlspecialchars($username); ?>'s Profile Picture">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                        </svg>
+
                     </div>
 
                     <div class="details">
@@ -191,7 +206,7 @@ require "details.php";
 
     </script>
     <script>
-        
+
         const statusMain = document.querySelector(".details .status");
         const incomingIdElement = document.querySelector(".details .incoming-id").textContent.trim();
 

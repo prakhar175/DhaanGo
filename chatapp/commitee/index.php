@@ -127,10 +127,24 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
             color:grey;
             margin-left:44%
         }
+        .reply {
+        font-size: 13px;
+        cursor: pointer;
+        color:blue
+    }
+
+    .meta-info:hover + .reply {
+        border: 1px solid red;
+        display: block;
+    }
+    .message-box {
+        font-size: 20px;
+    }
     </style>
 </head>
 
 <body>
+   
     <header>
         <a href="../../">DhaanGo</a>
     </header>
