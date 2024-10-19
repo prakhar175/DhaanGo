@@ -1,107 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DhaanGo</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="images/logo.png" />
-    <script
-      src="https://kit.fontawesome.com/6e98228717.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+    <script src="https://kit.fontawesome.com/6e98228717.js" crossorigin="anonymous"></script>
+</head>
 
-  <body>
+<body>
     <nav>
-      <div class="main">
-        <div class="logo">
-          <a href="">
-            <img src="images/logo.png" alt="DhaanGo Logo" />
-            <div>DhaanGo</div>
-          </a>
+        <div class="main">
+            <div class="logo">
+                <a href="">
+                    <img src="images/logo.png" alt="DhaanGo Logo" />
+                    <div>DhaanGo</div>
+                </a>
+            </div>
+            <div class="options">
+                <div>
+                    <a href="marketplace">Marketplace</a>
+                </div>
+                <div>
+                    <a href="resources">Resources</a>
+                </div>
+                <div class="menu-item" onclick="toggleDropdown('khetwan')">
+                    <a href="chatapp">
+                        <p>Khetwan</p>
+                    <div class="dropdown" id="khetwan">
+                        <a href="#"><i class="fa-solid fa-handshake-angle"></i> P2P</a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i> Community</a>
+                    </div>
+                    </a>
+                </div>
+                <div class="menu-item" onclick="toggleDropdown('tools')">
+                    <a href="Tools">
+                        <p>Tools</p>
+                    <div class="dropdown" id="tools">
+                        <a href="#"><i class="fa-solid fa-indian-rupee-sign"></i> Profit Calculator</a>
+                        <a href="#"><i class="fa-solid fa-arrow-trend-up"></i> MSP Rates</a>
+                        <a href="#"><i class="fa-solid fa-cloud"></i> Weather Forecast</a>
+                    </div>
+                    </a>
+                </div>
+                <div class="menu-item" onclick="toggleDropdown('auth')">
+                    <p class="login">Join</p>
+                    <div class="dropdown" id="auth">
+                        <a href="login/login.php"><i class="fa-solid fa-user-plus"></i> Log In</a>
+                        <a href="login_b/buisness_login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login for
+                            Business</a>
+                    </div>
+                </div>
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
         </div>
-        <div class="options">
-            <div>
-              <a href="marketplace">Marketplace</a>
-            </div>
-            <div>
-              <a href="resources">Resources</a>
-            </div>
-            <div class="menu-item" onclick="toggleDropdown('khetwan')">
-              <p>Khetwan</p>
-              <div class="dropdown" id="khetwan">
-                <a href="#"><i class="fa-solid fa-handshake-angle"></i> P2P</a>
-                <a href="#"><i class="fa-brands fa-instagram"></i> Community</a>
-              </div>
-            </div>
-            <div class="menu-item" onclick="toggleDropdown('tools')">
-              <p>Tools</p>
-              <div class="dropdown" id="tools">
-                <a href="#"><i class="fa-solid fa-indian-rupee-sign"></i> Profit Calculator</a>
-                <a href="#"><i class="fa-solid fa-arrow-trend-up"></i> MSP Rates</a>
-                <a href="#"><i class="fa-solid fa-cloud"></i> Weather Forecast</a>
-              </div>
-            </div>
-            <div class="menu-item" onclick="toggleDropdown('auth')">
-              <p>Join</p>
-              <div class="dropdown" id="auth">
-                <a href="#"><i class="fa-solid fa-user-plus"></i> Log In</a>
-                <a href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login for Business</a>
-              </div>
-            </div>
-            <div>
-            <label class="switch">
-              <input type="checkbox" id="theme-toggle" />
-              <span class="slider"></span>
-            </label>
-          </div>
-        </div>
-      </div>
     </nav>
 
     <div class="floating-dock-container">
-      <ul class="floating-dock">
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-house"></i>
-            <span class="title">Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-book-open"></i>
-            <span class="title">Resources</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="images/logo.png" alt="Aceternity Logo" />
-            <span class="title">DhaanGo</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-users"></i>
-            <span class="title">Community</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-gear"></i>
-            <span class="title">Tools</span>
-          </a>
-        </li>
-        <!-- <li>
+        <ul class="floating-dock">
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span class="title">Resources</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/logo.png" alt="Aceternity Logo" />
+                    <span class="title">DhaanGo</span>
+                </a>
+            </li>
+            <li>
+                <a href="chats">
+                    <i class="fa-solid fa-users"></i>
+                    <span class="title">Community</span>
+                </a>
+            </li>
+            <li>
+                <a href="Tools">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="title">Tools</span>
+                </a>
+            </li>
+            <!-- <li>
                 <a href="#">
                     <i class="fa-solid fa-user"></i>
                     <span class="title">Profile</span>
                 </a>
             </li> -->
-      </ul>
+        </ul>
     </div>
 
     <script src="script.js"></script>
-    <script></script>
-  </body>
+    <script>
+        const lo = document.querySelector('.main .options .menu-item .login ')
+        const loginxhr = new XMLHttpRequest()
+        loginxhr.open('GET', 'login.php', true)
+        loginxhr.onload = function () {
+            if (loginxhr.status == 200) {
+                const da = loginxhr.responseText
+                console.log(da)
+                if (da === "user_b") {
+                    lo.textContent = "Profile"
+
+                    document.getElementById("auth").style.display = "none"
+                    lo.addEventListener("click", () => {
+                        window.location.href = "login_b/buisness_login/profile"
+
+                    })
+                }
+                else if (da === "user_f") {
+                    lo.textContent = "Profile"
+
+                    document.getElementById("auth").style.display = "none"
+                    lo.addEventListener("click", () => {
+                        window.location.href = "profile_main"
+                    }
+                    )
+                }
+            }
+        }
+            loginxhr.send()
+
+    </script>
+</body>
+
 </html>
