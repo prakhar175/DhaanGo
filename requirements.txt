@@ -10,6 +10,8 @@ soundfile
 requests
 numpy
 pandas
+os
+io
 
 
 
