@@ -1,0 +1,1 @@
+CREATE TABLE `chat`.`messages` (`msg_id` INT(11) NOT NULL AUTO_INCREMENT , `incoming_msg_id` VARCHAR(255) NULL DEFAULT NULL , `outgoing_msg_id` VARCHAR(255) NULL DEFAULT NULL , `message` VARCHAR(255) NULL DEFAULT NULL , `timestamp` TIMESTAMP(6) NULL DEFAULT NULL , PRIMARY KEY (`msg_id`)) ENGINE = InnoDB;
