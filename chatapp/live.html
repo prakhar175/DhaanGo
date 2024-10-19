@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Click Background Color</title>
+    <style>
+        body {
+            transition: background-color 0.3s;
+        }
+
+        .clickable-div {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            background-color: lightblue;
+            position: relative;
+            z-index: 2;
+        }
+
+        .faded-background {
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clickable-div" id="div1"></div>
+  
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const divs = document.querySelectorAll('.clickable-div');
+            const body = document.body;
+
+            divs.forEach(div => {
+                div.addEventListener('click', function () {
+                    // Apply the faded background to the body
+                    body.classList.add('faded-background');
+
+                    // Remove the faded background from the clicked div
+                    divs.forEach(d => d.style.zIndex = '1');
+                    this.style.zIndex = '3';
+                });
+            });
+
+            body.addEventListener('click', function (event) {
+                if (!event.target.classList.contains('clickable-div')) {
+                    // Remove the faded background when clicking outside the divs
+                    body.classList.remove('faded-background');
+                    divs.forEach(d => d.style.zIndex = '2');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

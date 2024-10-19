@@ -1,0 +1,157 @@
+.recent {
+    border: none;
+}
+
+.setting svg {
+    transition: transform 0.4s;
+}
+
+.setting svg.rotate {
+    transform: rotate(180deg);
+}
+
+.settingsdispl {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: none;
+    background-color: #333;
+    color: white;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 12px;
+    width: 20%;
+    padding: 10px;
+}
+
+.settingsdispl.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.settingsdispl div {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settingsdispl button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.search input {
+    width: 90vw;
+}
+
+.search button {
+    margin-left: 0%;
+}
+
+.online,
+.offline {
+    width: 10px;
+    height: 10px;
+}
+
+@media screen and (max-width:600px) {
+    .settingsdispl {
+        margin-left: 0%;
+        width: 80%;
+    }
+
+    .wrapper {
+        width: 100vw;
+    }
+
+    .search button {
+        width: 30vw;
+    }
+
+    .online,
+    .offline {
+        width: 12px;
+        height: 12px;
+        margin-left: auto;
+    }
+}
+
+body.darkmode {
+    background-color: black;
+}
+
+/* .settingsdispl{
+        display: block;
+    } */
+.settingsdispl.active {
+    display: block;
+}
+
+.wrapper.darkmode {
+    color: white;
+    background-color: grey;
+}
+
+
+
+.mess {
+    /* border:3px solid blue; */
+    color: white;
+}
+
+.del {
+    /* bordeR: 1px solid red; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 26%;
+    color: white;
+    background-color: #333;
+    font-weight: bold;
+    border-radius: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translate(-50%, -50%);
+    padding: 12px;
+    display: none
+}
+.del input{
+    display: block;
+    width:80%;
+    margin-left:10%;
+    padding:6px;
+    border: 1px solid grey;
+    border-radius:10px;
+background-color: #333;
+font-size: 80%;
+font-weight: bolder;
+
+}
+.del button{
+    display: block;
+    width:40%;
+    margin-left :30%;
+    color:white;
+    font-weight: bold;
+    background-color: red;
+    border:none;
+    padding:6px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+@media screen and (max-width:600px) {
+    .del{
+        width:80%;
+        /* margin-left:10% */
+    }
+}
+.del.display{
+    display: block
+}

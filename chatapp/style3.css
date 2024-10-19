@@ -1,0 +1,163 @@
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.content img {
+    margin-left: 0px;
+    margin-top: 10px;
+}
+
+.upload {
+    width: 13%;
+    background-color: #333;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.upload svg {
+    fill: white;
+    stroke: white;
+    stroke-width: 0;
+    transition: transform 0.8s;
+}
+
+.upload:hover {
+    background-color: #555;
+}
+
+.rotate {
+    transform: rotate(405deg);
+}
+
+.images {
+    position: absolute;
+    top: 78%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid red; */
+    background-color: #333;
+    color: white;
+    font-weight: 500;
+    font-size: 100%;
+    width: 15%;
+    border-radius: 12px;
+    display: none;
+    z-index: 100;
+}
+
+.images div {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 28px;
+    /* border: 1px solid green; */
+    cursor: pointer;
+}
+.images div:hover{
+    background-color: rgb(77, 72, 72);
+}
+.images svg {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 60%;
+    left: 10%;
+}
+
+.display {
+    display: block;
+}
+
+#documents svg {
+    fill: rgb(204,0,203)
+}
+#photosVideos svg{
+    fill:cyan
+}
+#camera svg{
+    /* fill:#333;
+    background-color: red; */
+    fill:red;
+}
+#documents{
+    border-top-left-radius: 13px;
+    border-top-right-radius:13px
+}
+#camera{
+    border-bottom-left-radius:13px;
+    border-bottom-right-radius:13px
+}
+.imagesfinal{
+    /* border:1px solid green; */
+    position: absolute;
+    left:50%;
+    top:50%;
+    width:29%;
+    transform: translate(-50%,-50%);
+    height:400px;
+    display:none;
+    /* display: flex; */
+    /* flex-direction: column;
+    gap:10%; */
+    padding:10px;
+    background-color: #333;
+border-radius: 12px;
+}
+.imagesfinal img{
+    width:100%;
+    border-radius: 12px;
+    max-height:250px;
+    /* border:1px solid red */
+}
+.imagesfinal input{
+    background-color: #333;
+    color:white;
+    font-weight: bold;
+    padding:10px;
+    border-radius: 12px;
+width:80%;
+margin-left:9%;
+border:2px solid white
+}
+.imagesfinal ::placeholder{
+color:white;
+opacity: 0.8;
+font-weight: 700;
+}
+.cross{
+    color:white;
+    font-size: 40px;
+    /* border:1px solid red; */
+    width:8%;
+    /* height:6%; */
+    cursor: pointer;
+}
+.cross text{
+    color:red
+}
+.imagesub{
+    background-color: #333;
+    border-radius: 48%;
+    width:10%;
+    height:38px;
+    border:3px solid white;
+    cursor: pointer;
+}
+.imagesub svg{
+    fill:white;
+    /* width:30%; */
+/* position: relative;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%); */
+    stroke: white;
+    stroke-width: 2px;
+}
+.details img{
+    border:2px solid red;
+    width:100%;
+}

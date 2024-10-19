@@ -1,0 +1,151 @@
+.del input {
+    color: white
+}
+
+.del svg {
+    margin-left: 10px;
+    stroke: 13px;
+    cursor: pointer;
+}
+
+.setting {
+    border: 1px solid transparent
+}
+
+.setting {
+    margin-top: -10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* margin-top:0px */
+}
+
+.profile {
+    font-size: 70%;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: -10px;
+    height: 40px;
+    align-items: center;
+    text-align: center;
+}
+
+.setting svg {
+    margin-top: 18px;
+    margin-left: -2px
+}
+
+@media screen and (max-width:450px) {
+    .setting {
+        margin-left: -0%
+    }
+
+    .setting svg {
+        margin-left: 10px
+    }
+
+}
+
+.profiledetails {
+    width: 20%;
+    border: 1px solid green;
+    /* margin-left:15%; */
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 12px;
+    border: 1px solid grey;
+    border-radius: 23px
+}
+
+.profiledetails.active {
+    display: block;
+
+}
+
+.profiledetails img {
+    width: 80px;
+    height: 78px;
+
+}
+
+.users {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.users p {
+    margin-top: 32px
+}
+
+.profiledetails h1 {
+    width: 28%;
+    font-size: 150%;
+}
+
+.profiledetails .cross {
+    font-size: 150%;
+    cursor: pointer;
+    margin-left: 0%;
+    display: flex;
+    flex-direction: row;
+    gap: 38%
+}
+
+.details1 h1 {
+    margin-top: 0px
+}
+
+.bio {
+    font-weight: 400;
+}
+
+.editinfo {
+    display: flex;
+    flex-direction: row;
+    gap: 47%
+}
+
+.editinfo button {
+    background-color: black;
+    color: whitesmoke;
+    padding: 0px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    border-radius: 12px;
+    margin-top: -10px;
+    width: 30%;
+    cursor: pointer;
+}
+
+.bio p {
+    margin-top: 4px
+}
+.updateinfo{
+    /* border:1px solid red; */
+    display: block;
+    background-color: #333;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+form{
+    display: block;
+}
+.updateinfo form{
+    /* border:1px solid blue; */
+    display: block;
+}

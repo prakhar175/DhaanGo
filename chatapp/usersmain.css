@@ -1,0 +1,336 @@
+.details img {
+        width: 16%
+    }
+
+    .users-list {
+        /* border: 2px solid blue; */
+        padding: 3px;
+        margin-top: 4%;
+    }
+
+    .users-list .content {
+        /* border:4px solid red; */
+        width: 100%;
+        /* margin-left:11px; */
+        /* border: 2px solid red; */
+        padding: 4px;
+        border-radius: 33px;
+        display: flex;
+        flex-direction: row;
+        /* gap:0%; */
+
+    }
+
+    .users-list .content:hover {
+        background-color: rgba(128, 128, 127, 0.2)
+    }
+
+    
+
+    .search input {
+        padding: 7px;
+        color: black;
+        font-weight: bold;
+        /* border: 3px solid black; */
+        border-radius: 23px;
+        width: 74%
+    }
+
+    .search button {
+        color: white;
+        background-color: black;
+        /* border:3px solid black; */
+        padding: 8px;
+        /* font-weight: bolder; */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border-radius: 12px;
+        cursor: pointer;
+        width: 23%
+    }
+
+    .online {
+        width: 10px;
+        height: 10px;
+        background-color: darkgreen;
+        border-radius: 48%;
+        /* border:0.3px solid blue */
+    }
+
+    .offline {
+        width: 10px;
+        height: 10px;
+        background-color: darkgray;
+        border-radius: 48%;
+        /* border:0.3px solid blue */
+    }
+
+    .online,
+    .offline {
+        /* border:3px solid red; */
+        /* margin-right:0px; */
+        margin-left: auto;
+        margin-right: 10px
+    }
+
+
+
+    .details1 {
+        /* border: 1px solid blue; */
+        flex-direction: column;
+        display: flex
+    }
+
+    .details1 img {
+        width: 50px;
+        height: 52px;
+    }
+
+    .username {
+        font-size: 100%;
+        margin-top: 6%;
+    }
+
+    .info1 {
+        display: flex;
+        flex-direction: row;
+        gap: 10%
+    }
+
+    .status {
+        font-size: 100%;
+    }
+
+    .details1 {
+        display: flex;
+
+    }
+
+    .content1 {
+        display: flex;
+        flex-direction: row;
+        gap: 30%
+    }
+
+    .logout-button {
+        font-size: 70%;
+        padding: 10px;
+        color: white;
+        background-color: black;
+        border-radius: 12px;
+        font-weight: 300;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .logout {
+        width: 20%;
+        height: auto;
+        /* border: 3px solid blue;   */
+        visibility: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        background-color: rgba(0, 0, 0, 0.8);
+        font-weight: bold;
+        font-size: 100%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 10px;
+        /* padding"10px; */
+        border-radius: 22px;
+    }
+
+    .logout button {
+        color: white;
+        background-color: red;
+        padding: 10px;
+        font-weight: 9;
+        font-weight: bold;
+        border: none;
+        margin-top: 20px;
+        border-radius: 13px;
+        cursor: pointer;
+    }
+
+    .logout .stay {
+        background-color: grey;
+    }
+
+    h1 {
+        font-size: 80%
+    }
+
+
+    @media (max-width: 600px) {
+        .logout {
+            width: 90%;
+            /* Increase width to 90% for phones */
+            font-size: 90%;
+            /* Adjust font size for better readability on small screens */
+            padding: 20px;
+            /* Increase padding for better touch interface */
+        }
+
+        .logout button {
+            width: 40%;
+            /* Make buttons take full width of the parent element */
+        }
+
+        
+    }
+
+    .recent {
+        /* border: 1px solid blue; */
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        color: grey;
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        margin-top: -1px;
+        margin-left: 2px
+    }
+
+    .recent svg {
+        margin-top: 0px;
+        fill: gray
+    }
+
+    .details .mess {
+        /* bordeR:1px solid green; */
+        width: 280px;
+        display: flex;
+        flex-direction: row;
+        gap: 1px
+    }
+
+    .mess p {
+        /* bordeR:2px solid brown; */
+        display: flex;
+        flex-direction: row;
+        /* width:230px */
+    }
+
+    .details {
+        /* bordeR:2px solid black; */
+        width: auto
+    }
+
+    button {
+        border: 2px solid grey
+    }
+
+    input {
+        border: 1px solid black
+    }
+
+    
+
+    .content1 div button {
+
+        margin-left: 0px
+    }
+
+    .details1 {
+        /* color:Red; */
+        /* border: 3px solid green; */
+        width: 100%
+    }
+
+    .details1 div {
+        /* border:1px solid pink; */
+        width: 220px
+    }
+
+    .content1 {
+        gap: 0%
+    }
+
+ 
+
+    .logoutsetting {
+        /* border:1px solid red; */
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+        height: 90px
+    }
+
+    .logoutsetting svg {
+        position: relative;
+/* margin-top:10%; */
+        /* transform: translate(-50%, -50%); */
+        left: 34%; 
+top:-30%;
+        transition: transform 0.5s;
+
+        cursor: pointer;
+    }
+
+    
+    
+    
+    .setting svg {
+        /* fill: #fff; */
+        width: 28px;
+        height: 30px;
+        cursor: pointer;
+        transition: transform 0.4s ;
+    }
+    
+    .setting svg.rotate {
+        transform: rotate(45deg);
+    }
+    @media (max-width:600px) {
+        .setting svg{
+            left:0%
+        }
+    }
+    .toggle {
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+        position: relative;
+        cursor: pointer;
+        background-color: #ccc;
+        border-radius: 20px;
+        transition: background-color 0.3s;
+    }
+    .toggle:before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: white;
+        top: 4px;
+        left: 4px;
+        transition: transform 0.3s;
+    }
+    input:checked + .toggle {
+        background-color: rgb(21, 21, 21);
+    }
+    input:checked + .toggle:before {
+        transform: translateX(26px);
+    }
+    input {
+        display: none;
+    }
+    .search input{
+        /* border:1px solid blue; */
+        display: block;
+        width:130%;
+        
+    }
+    .search{
+        /* border:3px solid green; */
+        display: flex;
+        flex-direction: row;
+    }
+    .search button{
+        margin-left:64px;
+        width:90%
+    }

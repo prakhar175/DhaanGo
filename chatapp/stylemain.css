@@ -1,0 +1,110 @@
+.details .image  {
+    border: 2px solid grey;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.imagesfinal img {
+    border: 3px solid grey;
+}
+
+.images {
+    top: 84%;
+    border-radius: 13px;
+}
+
+.images div {
+    border-radius: 13px;
+}
+
+/* .backward svg {
+    stroke-width: 19px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: white;
+    
+} */
+
+.backward {
+    border-radius: 50%;
+    border: 2px solid gray;
+    padding: 10px;
+    width: 14%;
+    height: 10%;
+    background-color: #333;
+}
+
+.incoming .details img{
+border:2px solid grey;
+width:auto;
+min-height:140px;
+/* height: auto; */
+}
+.incoming .details img{
+border-bottom-left-radius: 0px;
+} 
+
+/* New styles for message images */
+.message-image {
+    max-width: 300px; /* Set your desired width */
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.display{
+    display:block
+}
+.imagesub{
+    width:100%;
+    border-radius: 20px;
+    color:white;
+    font-weight: bold;
+    font-size: 120%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border:3px solid white;
+}
+.backward{
+    height:43px;
+    cursor: pointer;
+}
+.incoming .details .image{
+    border-bottom-left-radius:0px
+}
+
+@media screen and (max-width:450px) {
+    .incoming .details img{
+        width:110%;
+        /* max-width: 90%; */
+        max-height: 100%;
+    }
+}
+.outgoing .details img{
+    border-bottom-right-radius: 1px;
+}
+.status{
+    /* border:1px solid blue; */
+    width:100%
+}
+.backward{
+    /* border-radius: 0px;; */
+    height:40px;
+    width:40px
+    /* border:1px solid red */
+}
+.backward svg{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-49%);
+     position:relative;
+    fill:white;
+    
+}
+.content{
+    width:100%;
+}
+.details div{
+    
+    display: none;
+}

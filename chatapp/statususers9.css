@@ -1,0 +1,306 @@
+ .updateinfo {
+     padding: 12px;
+     width: 26%;
+     z-index: 3;
+     color: white;
+     border-radius: 12px;
+     border: 3px solid grey;
+     display: none;
+     /* Ensure it's hidden by default */
+ }
+
+ .updateinfo form input {
+     display: block;
+     width: 100%;
+     padding: 6px;
+     background-color: #444;
+     color: white;
+     font-weight: bold;
+     border-radius: 12px;
+     border: 1px solid white;
+     margin-top: 7px;
+ }
+
+ .updateinfo .cross {
+     margin-left: 0%;
+     font-size: 22px;
+     display: flex;
+     flex-direction: row;
+     gap: 16%;
+ }
+
+ .cross div {
+     font-size: 24px;
+     cursor: pointer;
+ }
+
+ .updateinfo button {
+     width: 60%;
+     margin-left: 20%;
+     background-color: #222;
+     color: white;
+     padding: 9px;
+     border-radius: 12px;
+     font-weight: bolder;
+     cursor: pointer;
+ }
+
+ .updateinfo.active {
+     display: block;
+     /* Show when active */
+ }
+
+ hr {
+     width: 60%;
+     margin-left: 19%;
+     border: 1px solid grey
+ }
+
+ .profile p {
+     margin-top: -4px
+ }
+
+ /* .updateinfo{
+            border:1px solid blue
+        }
+        .bio{
+            border:1px solid red
+        } */
+ @media screen and (max-width:500px) {
+     .updateinfo {
+         width: 85%;
+         z-index: 7;
+     }
+
+     .profiledetails {
+         width: 80%;
+         z-index: 6;
+     }
+ }
+
+ .status {
+     /* position: absolute;
+            left:50%;
+            top:80%;
+            transform: translate(-50%,-50%); */
+     background-color: #333;
+     color: whitesmoke;
+     font-weight: bold;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     padding: 0px;
+     border-radius: 8px;
+     display: flex;
+ }
+
+ .status div {
+     width: 50%;
+     padding: 10px;
+     text-align: center;
+     /* border: 0.8px solid grey; */
+     border-radius: 8px;
+     cursor: pointer;
+ }
+
+ .setting svg {
+     margin-top: 11px
+ }
+
+ .profile p {
+     font-weight: 400;
+ }
+
+ .statusview input {
+     display: block;
+ }
+
+ .statusview {
+     display: none
+ }
+
+ .statusview.active {
+     display: block;
+     animation: display 0.7s ease-in-out;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+
+ .statusview {
+     width: 26%;
+     background-color: #333;
+     color: white;
+     /* z-index: 99999; */
+ }
+
+ @keyframes display {
+     from {
+         left: 60%;
+         opacity: 0.4;
+     }
+
+     to {
+         left: 50%;
+         opacity: 1;
+     }
+ }
+
+ @media screen and (max-width:450px) {
+     .statusview {
+         width: 100%;
+     }
+
+     @keyframes display {
+         from {
+             left: 100%;
+             opacity: 0.4
+         }
+
+         to {
+             left: 50%;
+             opacity: 1;
+         }
+     }
+ }
+
+ .status .chat.active {
+     color: white
+ }
+
+ .status .chat {
+     color: lightgreen
+ }
+
+ .status .stories.active {
+     color: lightgreen
+ }
+
+ .statusview {
+     padding: 5px;
+     border-radius: 12px
+ }
+
+
+
+ .statusview .icon {
+     display: flex;
+     gap: 30%;
+     /* border:3px solid red */
+ }
+
+ .statusview header {
+     display: flex;
+     gap: 47%
+ }
+
+ header svg {
+     width: 20px;
+     height: 20px;
+     /* border:2px solid green */
+ }
+
+ header svg {
+     width: 26px;
+     height: 24px;
+     cursor: pointer
+ }
+
+ .cro {
+     margin-left: 94%;
+     font-size: 160%;
+     cursor: pointer
+ }
+
+ .statusview .status {
+     border: 1px solid transparent
+ }
+
+ .statusview .status img {
+     width: 60px;
+     height: 60px;
+     border-radius: 47%;
+ }
+
+ .statusview .status .userimage {
+     width: 24%;
+     /* border: 2px solid red */
+ }
+
+ .userimage svg {
+     /* width:10px; */
+     fill: lightgreen;
+     /* margin-top:-420%; */
+     margin-left: 30px;
+     position: relative;
+     top: -23px
+         /* background-color: green; */
+ }
+
+ .statusview .status {
+     /* border: 3px solid green; */
+     height: 90px;
+ }
+
+ .status {
+     display: flex;
+     flex-direction: row;
+/* bordeR:1px solid red */
+ }
+
+ .status .otherstatus {
+     /* border: 1px solid blue; */
+     width: 76%;
+
+ }
+
+ .status input {
+     display: none;
+ }
+
+ label {
+     cursor: pointer;
+ }
+
+ .previewimage {
+     /* border: 1px solid blue; */
+display: flex;
+flex-direction: column;
+ }
+ .previewimage img{
+    width:30%;
+    height:100%;
+ }
+ .previewimage input{
+    display: none;
+ }
+ .previewimage button{
+    display: none;
+    background-color: rgb(38, 195, 38);
+    color: white;
+    padding:12px;
+    border: 1px solid grey;
+    border-radius: 5px;
+font-weight: bold;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+cursor: pointer;
+ }
+ button.active{
+    display: block;
+ }
+ form{
+    border:1px solid transparent
+ }
+ 
+ .previewimage button{
+    /* margin-left:70%; */
+    /* margin-top:-2%; */
+    width:90%;
+    margin-left:5%
+ }
+ .previewimage {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+
