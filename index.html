@@ -8,10 +8,82 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="images/logo.png" />
     <script src="https://kit.fontawesome.com/6e98228717.js" crossorigin="anonymous"></script>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
+            /* Prevent scrollbars from appearing */
+        }
+
+        /* Video background styles */
+        .video-background {
+            position: relative;
+            /* Fix the video in place */
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            object-fit: cover;
+            /* Cover the entire area */
+            z-index: -1;
+            /* Send the video to the background */
+            transition: opacity 3s ease-in-out, transform 1s ease-in-out
+            /* Smooth transition for fade and scale */
+        }
+
+        /* Navbar styles */
+        nav {
+            position: absolute;
+            /* Keep navbar relative for shadow */
+            z-index: 10;
+            /* Ensure navbar is above the video */
+        }
+
+        .navbar-shadow {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            /* Add shadow to the navbar */
+        }
+
+        /* Additional styles for your content */
+        .content {
+            position: relative;
+            z-index: 2;
+            /* Make sure content is above the video */
+            color: white;
+            /* Change text color for visibility */
+            text-align: center;
+            /* Center the content */
+            margin-top: 20%;
+            /* Adjust margin to position content */
+        }
+        nav {
+            transition: opacity 0.3s ease;
+        }
+        
+        nav.hidden {
+            opacity: 0; /* Fade out */
+            pointer-events: none; /* Prevent interaction when hidden */
+        }
+        
+        
+    </style>
 </head>
 
 <body>
-    <nav>
+    <!-- Video Background -->
+    <video onscroll="document.video.style.opacity='1'" class="video-background" autoplay muted loop>
+        <source src="images/bvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Navbar -->
+    <nav class="navbar-shadow">
         <div class="main">
             <div class="logo">
                 <a href="">
@@ -29,20 +101,20 @@
                 <div class="menu-item" onclick="toggleDropdown('khetwan')">
                     <a href="chatapp">
                         <p>Khetwan</p>
-                    <div class="dropdown" id="khetwan">
-                        <a href="#"><i class="fa-solid fa-handshake-angle"></i> P2P</a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i> Community</a>
-                    </div>
+                        <div class="dropdown" id="khetwan">
+                            <a href="#"><i class="fa-solid fa-handshake-angle"></i> P2P</a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i> Community</a>
+                        </div>
                     </a>
                 </div>
                 <div class="menu-item" onclick="toggleDropdown('tools')">
                     <a href="Tools">
                         <p>Tools</p>
-                    <div class="dropdown" id="tools">
-                        <a href="#"><i class="fa-solid fa-indian-rupee-sign"></i> Profit Calculator</a>
-                        <a href="#"><i class="fa-solid fa-arrow-trend-up"></i> MSP Rates</a>
-                        <a href="#"><i class="fa-solid fa-cloud"></i> Weather Forecast</a>
-                    </div>
+                        <div class="dropdown" id="tools">
+                            <a href="#"><i class="fa-solid fa-indian-rupee-sign"></i> Profit Calculator</a>
+                            <a href="#"><i class="fa-solid fa-arrow-trend-up"></i> MSP Rates</a>
+                            <a href="#"><i class="fa-solid fa-cloud"></i> Weather Forecast</a>
+                        </div>
                     </a>
                 </div>
                 <div class="menu-item" onclick="toggleDropdown('auth')">
@@ -63,6 +135,7 @@
         </div>
     </nav>
 
+    <!-- Floating Dock (Optional) -->
     <div class="floating-dock-container">
         <ul class="floating-dock">
             <li>
@@ -95,15 +168,55 @@
                     <span class="title">Tools</span>
                 </a>
             </li>
-            <!-- <li>
-                <a href="#">
-                    <i class="fa-solid fa-user"></i>
-                    <span class="title">Profile</span>
-                </a>
-            </li> -->
         </ul>
     </div>
-
+    <div class="scroll-content">
+        <!-- Optional Content Overlay -->
+        <div class="content">
+            <h1>Welcome to DhaanGo</h1>
+            <p>Your tagline or description goes here.</p>
+        </div>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet incidunt optio. Voluptate magnam
+            molestias repellat neque reprehenderit mollitia, aliquid totam sit fugit soluta ipsam a itaque incidunt
+            inventore numquam?</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet incidunt optio. Voluptate magnam
+            molestias repellat neque reprehenderit mollitia, aliquid totam sit fugit soluta ipsam a itaque incidunt
+            inventore numquam?</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet incidunt optio. Voluptate magnam
+            molestias repellat neque reprehenderit mollitia, aliquid totam sit fugit soluta ipsam a itaque incidunt
+            inventore numquam?</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet incidunt optio. Voluptate magnam
+            molestias repellat neque reprehenderit mollitia, aliquid totam sit fugit soluta ipsam a itaque incidunt
+            inventore numquam?</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet incidunt optio. Voluptate magnam
+            molestias repellat neque reprehenderit mollitia, aliquid totam sit fugit soluta ipsam a itaque incidunt
+            inventore numquam?</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet incidunt optio. Voluptate magnam
+            molestias repellat neque reprehenderit mollitia, aliquid totam sit fugit soluta ipsam a itaque incidunt
+            inventore numquam?</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet incidunt optio. Voluptate magnam
+            molestias repellat neque reprehenderit mollitia, aliquid totam sit fugit soluta ipsam a itaque incidunt
+            inventore numquam?</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet incidunt optio. Voluptate magnam
+            molestias repellat neque reprehenderit mollitia, aliquid totam sit fugit soluta ipsam a itaque incidunt
+            inventore numquam?</p>
+    </div>
     <script src="script.js"></script>
     <script>
         const lo = document.querySelector('.main .options .menu-item .login ')
@@ -128,13 +241,30 @@
                     document.getElementById("auth").style.display = "none"
                     lo.addEventListener("click", () => {
                         window.location.href = "profile_main"
-                    }
-                    )
+                    })
                 }
             }
         }
-            loginxhr.send()
-
+        loginxhr.send()
+    </script>
+    <script>
+        let lastScrollTop1 = 0;
+let scr=0;
+        window.addEventListener("scroll", () => {
+            const scr = window.scrollY;
+            const nav = document.querySelector("nav");
+        console.log(scr)
+        console.log("heyy")
+            // Check scroll direction and position
+            if (scr > 10 && scr > lastScrollTop1) {
+                nav.classList.add("hidden"); // Add class to hide
+            } else {
+                nav.classList.remove("hidden"); // Remove class to show
+            }
+        
+            lastScrollTop1 = scr <= 0 ? 0 : scr; // For Mobile or negative scrolling
+        });
+        
     </script>
 </body>
 
