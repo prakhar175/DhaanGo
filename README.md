@@ -1,4 +1,4 @@
-# 🌾 DhaanGo: Cultivating Success, Harvesting Progress 🌾
+# 🌾DhaanGo: Cultivating Success, Harvesting Progress🌾
 
 **By Farmers, For Farmers** | **Empowering Agriculture with AI and Technology**
 
