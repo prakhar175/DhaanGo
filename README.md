@@ -103,7 +103,7 @@ pip install -r requirements.txt
 ## 🎥 Demo and PPT
 
 - [Watch the Demo PPT](https://drive.google.com/file/d/1TDpmVmvHljvmXBqdowESVcBHXkDpqMZS/view?usp=sharing)
-- [View the Live Prototype](https://yourprototype.com)
+- [View the Live Prototype](https://drive.google.com/file/d/14Ik3kRgIOqoRO_zusz5UoFwN_5qGRItd/view?usp=sharing)
 
 ---
 
@@ -112,7 +112,7 @@ pip install -r requirements.txt
 - **Shreeyans Arora** - [GitHub](https://github.com/shreeyans1298) | [Email](mailto:shreeyans1298@gmail.com)
 - **Prakhar Kothari** - [GitHub](https://github.com/prakhark2004) | [Email](mailto:prakhar.k2004@gmail.com)
 - **Aditya Kurani** - [GitHub](https://github.com/adityakurani26) | [Email](mailto:adityakurani26@gmail.com)
-- **Akshat Tiwari** - [GitHub](https://github.com/akshat35tiwari) | [Email](mailto:akshat35tiwari@gmail.com)
+- **Akshat Tiwari** - [GitHub](https://github.com/aksh8t) | [Email](mailto:akshat35tiwari@gmail.com)
 
 ---
 
