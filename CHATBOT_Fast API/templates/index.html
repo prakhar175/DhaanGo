@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer and Pesticide Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #chatbox {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 10px;
+            max-width: 75%;
+        }
+        .user-message {
+            background-color: #dcf8c6;
+            align-self: flex-end;
+            margin-left: auto;
+            color: #333;
+        }
+        .bot-message {
+            background-color: #f1f0f0;
+            align-self: flex-start;
+            margin-right: auto;
+            color: #333;
+        }
+        #inputContainer {
+            display: flex;
+            margin-top: 10px;
+        }
+        #userInput {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5cb85c;
+            color: white;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fertilizer and Pesticide Chatbot</h1>
+    <div id="chatbox"></div>
+    <div id="inputContainer">
+        <input type="text" id="userInput" placeholder="Enter the crop name..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            if (!userInput) return;
+
+            // Display user message
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'message user-message';
+            userMessageDiv.innerHTML = `User: ${userInput}`;
+            document.getElementById('chatbox').appendChild(userMessageDiv);
+            document.getElementById('userInput').value = '';
+
+            // Send message to the backend
+            const response = await fetch('/generate/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ input_text: userInput }),
+            });
+
+            const data = await response.json();
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.className = 'message bot-message';
+            botMessageDiv.innerHTML = `MittiMitra: ${data.generated_text}`;
+            document.getElementById('chatbox').appendChild(botMessageDiv);
+            
+            // Scroll to the bottom of the chatbox
+            document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
+        }
+    </script>
+</body>
+</html>
